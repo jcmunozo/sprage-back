@@ -1,3 +1,5 @@
+const fs = require('fs');
+const path = require('path');
 const Vocabulary = require('../models/Vocabulary');
 
 // @desc    Get all vocabulary cards
@@ -34,8 +36,8 @@ const getVocabularyById = async (req, res) => {
 const createVocabulary = async (req, res) => {
   const { type, language, category, front, back, example, tags, difficulty, id } = req.body;
 
-  if (!language || !category || !front || !id) {
-    return res.status(400).json({ message: 'Please enter all required fields: language, category, front, id' });
+  if (!language || !front || !id) { // category is no longer strictly required
+    return res.status(400).json({ message: 'Please enter all required fields: language, front, id' });
   }
 
   try {
@@ -105,10 +107,50 @@ const deleteVocabulary = async (req, res) => {
   }
 };
 
+// @desc    Import vocabulary data from unified_data.json
+// @route   POST /api/vocabulary/import
+// @access  Public
+const importVocabulary = async (req, res) => {
+  try {
+    const filePath = path.join(__dirname, '..', '..', 'unified_data.json');
+    const data = fs.readFileSync(filePath, 'utf8');
+    const vocabularyData = JSON.parse(data);
+
+    let importedCount = 0;
+    let updatedCount = 0;
+
+    for (const item of vocabularyData) {
+      const existingCard = await Vocabulary.findOne({ id: item.id });
+
+      if (existingCard) {
+        // Update existing card
+        Object.assign(existingCard, item);
+        await existingCard.save();
+        updatedCount++;
+      } else {
+        // Create new card
+        const newCard = new Vocabulary(item);
+        await newCard.save();
+        importedCount++;
+      }
+    }
+
+    res.status(200).json({
+      message: 'Vocabulary import complete',
+      importedCount,
+      updatedCount,
+    });
+  } catch (error) {
+    console.error('Error importing vocabulary:', error);
+    res.status(500).json({ message: 'Server error during import', error: error.message });
+  }
+};
+
 module.exports = {
   getVocabulary,
   getVocabularyById,
   createVocabulary,
   updateVocabulary,
   deleteVocabulary,
+  importVocabulary,
 };

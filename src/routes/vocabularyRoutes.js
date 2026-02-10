@@ -6,9 +6,11 @@ const {
   createVocabulary,
   updateVocabulary,
   deleteVocabulary,
+  importVocabulary,
 } = require('../controllers/vocabularyController');
 
 router.route('/').get(getVocabulary).post(createVocabulary);
+router.post('/import', importVocabulary);
 router
   .route('/:id')
   .get(getVocabularyById)

@@ -13,7 +13,6 @@ const VocabularySchema = mongoose.Schema(
     },
     category: {
       type: String,
-      required: true,
     },
     front: {
       type: String,
@@ -31,7 +30,6 @@ const VocabularySchema = mongoose.Schema(
     difficulty: {
       type: String,
       enum: ['Beginner', 'Intermediate', 'Advanced'],
-      default: 'Beginner',
     },
     id: {
       type: Number,
