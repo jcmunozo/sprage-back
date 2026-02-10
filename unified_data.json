@@ -1,0 +1,2333 @@
+[
+  {
+    "type": "idiom",
+    "language": "English",
+    "category": "",
+    "front": "Cross the T's",
+    "back": "Be meticulous",
+    "example": "",
+    "tags": [
+      "formality"
+    ],
+    "difficulty": null,
+    "id": 0
+  },
+  {
+    "type": "idiom",
+    "language": "English",
+    "category": "",
+    "front": "Pretty good",
+    "back": "Be meticulous",
+    "example": "",
+    "tags": [
+      "formality"
+    ],
+    "difficulty": null,
+    "id": 1
+  },
+  {
+    "type": "idiom",
+    "language": "English",
+    "category": "",
+    "front": "face the music",
+    "back": "acept the concequence",
+    "example": "",
+    "tags": [
+      "formality"
+    ],
+    "difficulty": null,
+    "id": 2
+  },
+  {
+    "type": "idiom",
+    "language": "English",
+    "category": "",
+    "front": "under de water",
+    "back": "In a bad situation",
+    "example": "",
+    "tags": [
+      "formality"
+    ],
+    "difficulty": null,
+    "id": 3
+  },
+  {
+    "type": "idiom",
+    "language": "English",
+    "category": "",
+    "front": "control the room",
+    "back": "Take control of your feelings",
+    "example": "",
+    "tags": [
+      "formality"
+    ],
+    "difficulty": null,
+    "id": 4
+  },
+  {
+    "type": "idiom",
+    "language": "English",
+    "category": "",
+    "front": "have the way in words",
+    "back": "have the way in words",
+    "example": "",
+    "tags": [
+      "formality"
+    ],
+    "difficulty": null,
+    "id": 5
+  },
+  {
+    "type": "idiom",
+    "language": "English",
+    "category": "",
+    "front": "talking the same language",
+    "back": "have the way in words",
+    "example": "",
+    "tags": [
+      "formality"
+    ],
+    "difficulty": null,
+    "id": 6
+  },
+  {
+    "type": "idiom",
+    "language": "English",
+    "category": "",
+    "front": "talking the same language",
+    "back": "have the way in words",
+    "example": "",
+    "tags": [
+      "formality"
+    ],
+    "difficulty": null,
+    "id": 7
+  },
+  {
+    "type": "idiom",
+    "language": "English",
+    "category": "",
+    "front": "we must have reduced the issues, if we were..",
+    "back": "have the way in words",
+    "example": "",
+    "tags": [
+      "formality"
+    ],
+    "difficulty": null,
+    "id": 8
+  },
+  {
+    "type": "idiom",
+    "language": "English",
+    "category": "",
+    "front": "we must have reduced the issues, if we were..",
+    "back": "have the way in words",
+    "example": "",
+    "tags": [
+      "formality"
+    ],
+    "difficulty": null,
+    "id": 9
+  },
+  {
+    "type": "idiom",
+    "language": "English",
+    "category": "",
+    "front": "like father, like son",
+    "back": "Sons often are similar to their parents",
+    "example": "",
+    "tags": [
+      "formality"
+    ],
+    "difficulty": null,
+    "id": 10
+  },
+  {
+    "type": "idiom",
+    "language": "English",
+    "category": "",
+    "front": "Then again",
+    "back": "Contradictory",
+    "example": "",
+    "tags": [
+      "formality"
+    ],
+    "difficulty": null,
+    "id": 11
+  },
+  {
+    "type": "idiom",
+    "language": "English",
+    "category": "",
+    "front": "straigh the horses mouth",
+    "back": "Contradictory",
+    "example": "",
+    "tags": [
+      "formality"
+    ],
+    "difficulty": null,
+    "id": 12
+  },
+  {
+    "type": "idiom",
+    "language": "English",
+    "category": "",
+    "front": "Acid test",
+    "back": "Proves the effectiveness of something",
+    "example": "",
+    "tags": [
+      ""
+    ],
+    "difficulty": null,
+    "id": 13
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "For + -ing",
+    "back": "Used to express purpose",
+    "example": "This tool is for cutting.",
+    "tags": [
+      "prepositions",
+      "verbs"
+    ],
+    "difficulty": null,
+    "id": 14
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "Not only .... But also",
+    "back": "Used to express purpose",
+    "example": "This tool is for cutting.",
+    "tags": [
+      "prepositions",
+      "verbs"
+    ],
+    "difficulty": null,
+    "id": 15
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "I am amazed at how",
+    "back": "Used to express admiration",
+    "example": "This tool is for cutting.",
+    "tags": [
+      "prepositions",
+      "verbs"
+    ],
+    "difficulty": null,
+    "id": 16
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "I hope to",
+    "back": "Esperar algo",
+    "example": "",
+    "tags": [
+      "prepositions",
+      "verbs"
+    ],
+    "difficulty": null,
+    "id": 17
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "In doing so",
+    "back": "Al hacerlo",
+    "example": "",
+    "tags": [
+      "prepositions",
+      "verbs"
+    ],
+    "difficulty": null,
+    "id": 18
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "bury the hatche",
+    "back": "Al hacerlo",
+    "example": "",
+    "tags": [
+      "prepositions",
+      "verbs"
+    ],
+    "difficulty": null,
+    "id": 19
+  },
+  {
+    "type": "vocabulary",
+    "language": "Mixed",
+    "category": "",
+    "front": "in favor of",
+    "back": "a favor de",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 20
+  },
+  {
+    "type": "vocabulary",
+    "language": "Mixed",
+    "category": "",
+    "front": "tirelessly",
+    "back": "incansablemente",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 21
+  },
+  {
+    "type": "vocabulary",
+    "language": "Mixed",
+    "category": "",
+    "front": "Rashly",
+    "back": "precipitadamente",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 22
+  },
+  {
+    "type": "vocabulary",
+    "language": "Mixed",
+    "category": "",
+    "front": "in a manner that is hasty",
+    "back": "de manera apresurada",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 23
+  },
+  {
+    "type": "vocabulary",
+    "language": "Mixed",
+    "category": "",
+    "front": "carry out",
+    "back": "Llevar a cabo",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 24
+  },
+  {
+    "type": "vocabulary",
+    "language": "Mixed",
+    "category": "",
+    "front": "properly",
+    "back": "propiamente",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 25
+  },
+  {
+    "type": "vocabulary",
+    "language": "Mixed",
+    "category": "",
+    "front": "in the know",
+    "back": "en la juega",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 26
+  },
+  {
+    "type": "vocabulary",
+    "language": "Mixed",
+    "category": "",
+    "front": "cutting down",
+    "back": "Reducir",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 27
+  },
+  {
+    "type": "vocabulary",
+    "language": "Mixed",
+    "category": "",
+    "front": "how long",
+    "back": "cuanto tiempo",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 28
+  },
+  {
+    "type": "vocabulary",
+    "language": "Mixed",
+    "category": "",
+    "front": "how it does it is not a concern",
+    "back": "como lo hace, no es una preocupacion",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 29
+  },
+  {
+    "type": "vocabulary",
+    "language": "Mixed",
+    "category": "",
+    "front": "but you have to sit absolutely still",
+    "back": "pero tienes que sentarte absolutamente quieto",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 30
+  },
+  {
+    "type": "vocabulary",
+    "language": "Mixed",
+    "category": "",
+    "front": "I'm telling yoo",
+    "back": "te lo digo",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 31
+  },
+  {
+    "type": "vocabulary",
+    "language": "Mixed",
+    "category": "",
+    "front": "far before",
+    "back": "Mucho antes",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 32
+  },
+  {
+    "type": "vocabulary",
+    "language": "Mixed",
+    "category": "",
+    "front": "even I would rather be watching",
+    "back": "incluso yo preferiria estar viendo ...",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 33
+  },
+  {
+    "type": "vocabulary",
+    "language": "Mixed",
+    "category": "",
+    "front": "nowhere near that",
+    "back": "Ni de serca",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 34
+  },
+  {
+    "type": "vocabulary",
+    "language": "Mixed",
+    "category": "",
+    "front": "when do we get to see the sun",
+    "back": "cuando podremos ver el sol",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 35
+  },
+  {
+    "type": "vocabulary",
+    "language": "Mixed",
+    "category": "",
+    "front": "by default",
+    "back": "por defecto",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 36
+  },
+  {
+    "type": "vocabulary",
+    "language": "Mixed",
+    "category": "",
+    "front": "in the know",
+    "back": "sabidos",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 37
+  },
+  {
+    "type": "vocabulary",
+    "language": "Mixed",
+    "category": "",
+    "front": "past + would",
+    "back": "ia ej: presumia, acogia, hacia",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 38
+  },
+  {
+    "type": "vocabulary",
+    "language": "Mixed",
+    "category": "",
+    "front": "If needed, Alex would allocate additional resources",
+    "back": "Si fuera necesario, alex asignaria recursos ...",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 39
+  },
+  {
+    "type": "vocabulary",
+    "language": "Mixed",
+    "category": "",
+    "front": "yellow-bellied",
+    "back": "coward",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 40
+  },
+  {
+    "type": "vocabulary",
+    "language": "Mixed",
+    "category": "",
+    "front": "Works like a charm",
+    "back": "Works very well or as expected",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 41
+  },
+  {
+    "type": "vocabulary",
+    "language": "Mixed",
+    "category": "",
+    "front": "if needed",
+    "back": "Si es necesario",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 42
+  },
+  {
+    "type": "vocabulary",
+    "language": "Mixed",
+    "category": "",
+    "front": "Throw one self into",
+    "back": "lanzarse contra",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 43
+  },
+  {
+    "type": "vocabulary",
+    "language": "Mixed",
+    "category": "",
+    "front": "roadblock",
+    "back": "obstaculo",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 44
+  },
+  {
+    "type": "vocabulary",
+    "language": "Mixed",
+    "category": "",
+    "front": "hindrance",
+    "back": "obstaculo",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 45
+  },
+  {
+    "type": "vocabulary",
+    "language": "Mixed",
+    "category": "",
+    "front": "though",
+    "back": "Aunque con",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 46
+  },
+  {
+    "type": "vocabulary",
+    "language": "Mixed",
+    "category": "",
+    "front": "sharp eye",
+    "back": "ojo agudo",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 47
+  },
+  {
+    "type": "vocabulary",
+    "language": "Mixed",
+    "category": "",
+    "front": "tenfold",
+    "back": "diez veces",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 48
+  },
+  {
+    "type": "vocabulary",
+    "language": "Mixed",
+    "category": "",
+    "front": "Do + verb infinitive",
+    "back": "recomendacion",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 49
+  },
+  {
+    "type": "vocabulary",
+    "language": "Mixed",
+    "category": "",
+    "front": "Do make sure you chosse the correct time to say that",
+    "back": "asegurate de elegir el tiempo correcto para decirlo",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 50
+  },
+  {
+    "type": "vocabulary",
+    "language": "Spanish-English",
+    "category": "",
+    "front": "rechazar",
+    "back": "turn down",
+    "example": "I'll have to turn down the invitation",
+    "tags": [],
+    "difficulty": null,
+    "id": 51
+  },
+  {
+    "type": "vocabulary",
+    "language": "Spanish-English",
+    "category": "",
+    "front": "por",
+    "back": "Because of",
+    "example": "Because of the wheter",
+    "tags": [],
+    "difficulty": null,
+    "id": 52
+  },
+  {
+    "type": "vocabulary",
+    "language": "Spanish-English",
+    "category": "",
+    "front": "urgente",
+    "back": "Pressing",
+    "example": "Because of a pressing issue",
+    "tags": [],
+    "difficulty": null,
+    "id": 53
+  },
+  {
+    "type": "vocabulary",
+    "language": "Spanish-English",
+    "category": "",
+    "front": "repasar",
+    "back": "brush up",
+    "example": "I scheduled a meeting with you to go over lifting",
+    "tags": [],
+    "difficulty": null,
+    "id": 54
+  },
+  {
+    "type": "vocabulary",
+    "language": "Spanish-English",
+    "category": "",
+    "front": "hacer seguimiento",
+    "back": "keep track",
+    "example": "I am not able to keep track of all our emails",
+    "tags": [],
+    "difficulty": null,
+    "id": 55
+  },
+  {
+    "type": "vocabulary",
+    "language": "Spanish-English",
+    "category": "",
+    "front": "rechazar",
+    "back": "turn down",
+    "example": "I'll have to turn down the invitation",
+    "tags": [],
+    "difficulty": null,
+    "id": 56
+  },
+  {
+    "type": "vocabulary",
+    "language": "Spanish-English",
+    "category": "",
+    "front": "por",
+    "back": "Because of",
+    "example": "Because of the wheter",
+    "tags": [],
+    "difficulty": null,
+    "id": 57
+  },
+  {
+    "type": "vocabulary",
+    "language": "Spanish-English",
+    "category": "",
+    "front": "urgente",
+    "back": "Pressing",
+    "example": "Because of a pressing issue",
+    "tags": [],
+    "difficulty": null,
+    "id": 58
+  },
+  {
+    "type": "vocabulary",
+    "language": "Spanish-English",
+    "category": "",
+    "front": "repasar",
+    "back": "brush up",
+    "example": "I scheduled a meeting with you to go over lifting",
+    "tags": [],
+    "difficulty": null,
+    "id": 59
+  },
+  {
+    "type": "vocabulary",
+    "language": "Spanish-English",
+    "category": "",
+    "front": "hacer seguimiento",
+    "back": "keep track",
+    "example": "I am not able to keep track of all our emails",
+    "tags": [],
+    "difficulty": null,
+    "id": 60
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "subject + ing",
+    "back": "",
+    "example": "I sujest meeting with them",
+    "tags": [],
+    "difficulty": null,
+    "id": 61
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "By the book",
+    "back": "Al pie de la letra",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 62
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "By the way",
+    "back": "Por cierto",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 63
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "Dammn",
+    "back": "Maldicion",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 64
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "Put it down",
+    "back": "Ponlo en el suelo",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 65
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "Thinking outside the box",
+    "back": "Pensar diferente",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 66
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "Neither ... nor...",
+    "back": "Ni... Ni...",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 67
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "Bound to",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 68
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "deserve",
+    "back": "Merecido",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 69
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "While",
+    "back": "si bien",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 70
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "I wish I could",
+    "back": "Ojala pudiera",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 71
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "I wish I had took",
+    "back": "Ojala hubiera tomado",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 72
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "If only",
+    "back": "Si tan solo",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 73
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "would prefer... rather",
+    "back": "preferiria esto en lugar de aquello",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 74
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "regret + infinitive",
+    "back": "we regret to inform",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 75
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "be sorry + infinitive",
+    "back": "I am very sorry to tell you",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 76
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "as soon as we can ",
+    "back": " Tan pronto como podamos",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 77
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "get over",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 78
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "get off",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 79
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "feel like",
+    "back": "me gustaria",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 80
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "knuckle down",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 81
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "you risk",
+    "back": "Te arriesgas",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 82
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "you are used to",
+    "back": "te acostumbras",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 83
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "Be Bound",
+    "back": "We use bound to say that we are quite certain that something will be true or happen in the future",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 84
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "Be sure to",
+    "back": "We use bound to say that we are quite certain that something will be true or happen in the future",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 85
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "Be unlikely",
+    "back": "If something is likely to happen",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 86
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "For + -ing",
+    "back": "Used to express purpose",
+    "example": "This tool is for cutting.",
+    "tags": [
+      "prepositions",
+      "verbs"
+    ],
+    "difficulty": null,
+    "id": 87
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "Not only .... But also",
+    "back": "Used to express purpose",
+    "example": "This tool is for cutting.",
+    "tags": [
+      "prepositions",
+      "verbs"
+    ],
+    "difficulty": null,
+    "id": 88
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "I am amazed at how",
+    "back": "Used to express admiration",
+    "example": "This tool is for cutting.",
+    "tags": [
+      "prepositions",
+      "verbs"
+    ],
+    "difficulty": null,
+    "id": 89
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "I hope to",
+    "back": "Esperar algo",
+    "example": "",
+    "tags": [
+      "prepositions",
+      "verbs"
+    ],
+    "difficulty": null,
+    "id": 90
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "I keep learning",
+    "back": "",
+    "example": "",
+    "tags": [
+      "prepositions",
+      "verbs"
+    ],
+    "difficulty": null,
+    "id": 91
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "In doing so",
+    "back": "Al hacerlo",
+    "example": "",
+    "tags": [
+      "prepositions",
+      "verbs"
+    ],
+    "difficulty": null,
+    "id": 92
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "bury the hatche",
+    "back": "Al hacerlo",
+    "example": "",
+    "tags": [
+      "prepositions",
+      "verbs"
+    ],
+    "difficulty": null,
+    "id": 93
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "",
+    "back": "",
+    "example": "",
+    "tags": [
+      "prepositions",
+      "verbs"
+    ],
+    "difficulty": null,
+    "id": 94
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "People in the united stated shake hands firmly, while people in France kiss on the check warmly",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 95
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "What is the primary function of adverbials of manner in a sentence? to modify verbs",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 96
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "I would just say controversial things",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 97
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "what is an appositive",
+    "back": "A noun or phrase that provides extra information abbout the same noun, ussually placed between commas",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 98
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "The five essential ingredients for effective communication are",
+    "back": "CLarity,brevity,contect, impact and value",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 99
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "Mr, Jordan, the CEO of our company, will lead the meeting",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 100
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "fidget",
+    "back": "The verb that describes small movement of your hands and feet through nervourness or impatience",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 101
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "stage fright",
+    "back": "The expresion that describes the feeling og nervousness before or during an appeareance before an audience",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 102
+  },
+  {
+    "type": "grammar",
+    "language": "English",
+    "category": "",
+    "front": "What we needed WAS an effective leader who could motivate us all",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 103
+  },
+  {
+    "type": "idiom",
+    "language": "English-Spanish",
+    "category": "",
+    "front": "hi",
+    "back": "Hola",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 104
+  },
+  {
+    "type": "idiom",
+    "language": "English-Spanish",
+    "category": "",
+    "front": "Morning",
+    "back": "Buenos dias",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 105
+  },
+  {
+    "type": "idiom",
+    "language": "English-Spanish",
+    "category": "",
+    "front": "Afternoon",
+    "back": "Tardes",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 106
+  },
+  {
+    "type": "idiom",
+    "language": "English-Spanish",
+    "category": "",
+    "front": "annoy",
+    "back": "molesto",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 107
+  },
+  {
+    "type": "idiom",
+    "language": "English-Spanish",
+    "category": "",
+    "front": "So far",
+    "back": "Hasta ahora",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 108
+  },
+  {
+    "type": "idiom",
+    "language": "English-Spanish",
+    "category": "",
+    "front": "delve deeper into",
+    "back": "Profundizar",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 109
+  },
+  {
+    "type": "idiom",
+    "language": "English-Spanish",
+    "category": "",
+    "front": "Arent I",
+    "back": "verdad que o lo soy",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 110
+  },
+  {
+    "type": "idiom",
+    "language": "English-Spanish",
+    "category": "",
+    "front": "so that",
+    "back": "por lo tanto",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 111
+  },
+  {
+    "type": "idiom",
+    "language": "English-Spanish",
+    "category": "",
+    "front": "right away",
+    "back": "de inmediato",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 112
+  },
+  {
+    "type": "idiom",
+    "language": "English-Spanish",
+    "category": "",
+    "front": "rely on",
+    "back": "confiar en",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 113
+  },
+  {
+    "type": "idiom",
+    "language": "German-Spanish",
+    "category": "",
+    "front": "hallo",
+    "back": "Hola",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 114
+  },
+  {
+    "type": "idiom",
+    "language": "German-Spanish",
+    "category": "",
+    "front": "Wie geths",
+    "back": "Como estas",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 115
+  },
+  {
+    "type": "idiom",
+    "language": "German-Spanish",
+    "category": "",
+    "front": "Guten Tag",
+    "back": "Buenos dias",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 116
+  },
+  {
+    "type": "idiom",
+    "language": "English-Spanish",
+    "category": "",
+    "front": "Not only .... but also",
+    "back": "no solo es para .... sino tambien",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 117
+  },
+  {
+    "type": "idiom",
+    "language": "English",
+    "category": "",
+    "front": "Wish",
+    "back": "Desire something impossible",
+    "example": "I wish I were rich.",
+    "tags": [],
+    "difficulty": null,
+    "id": 118
+  },
+  {
+    "type": "idiom",
+    "language": "English",
+    "category": "",
+    "front": "Cross the T's",
+    "back": "Be meticulous",
+    "example": "",
+    "tags": [
+      "formality"
+    ],
+    "difficulty": null,
+    "id": 119
+  },
+  {
+    "type": "idiom",
+    "language": "English",
+    "category": "",
+    "front": "Pretty good",
+    "back": "Be meticulous",
+    "example": "",
+    "tags": [
+      "formality"
+    ],
+    "difficulty": null,
+    "id": 120
+  },
+  {
+    "type": "idiom",
+    "language": "English",
+    "category": "",
+    "front": "face the music",
+    "back": "acept the concequence",
+    "example": "",
+    "tags": [
+      "formality"
+    ],
+    "difficulty": null,
+    "id": 121
+  },
+  {
+    "type": "idiom",
+    "language": "English",
+    "category": "",
+    "front": "under de water",
+    "back": "In a bad situation",
+    "example": "",
+    "tags": [
+      "formality"
+    ],
+    "difficulty": null,
+    "id": 122
+  },
+  {
+    "type": "idiom",
+    "language": "English",
+    "category": "",
+    "front": "control the room",
+    "back": "Take control of your feelings",
+    "example": "",
+    "tags": [
+      "formality"
+    ],
+    "difficulty": null,
+    "id": 123
+  },
+  {
+    "type": "idiom",
+    "language": "English",
+    "category": "",
+    "front": "have the way in words",
+    "back": "have the way in words",
+    "example": "",
+    "tags": [
+      "formality"
+    ],
+    "difficulty": null,
+    "id": 124
+  },
+  {
+    "type": "idiom",
+    "language": "English",
+    "category": "",
+    "front": "talking the same language",
+    "back": "have the way in words",
+    "example": "",
+    "tags": [
+      "formality"
+    ],
+    "difficulty": null,
+    "id": 125
+  },
+  {
+    "type": "idiom",
+    "language": "English",
+    "category": "",
+    "front": "talking the same language",
+    "back": "have the way in words",
+    "example": "",
+    "tags": [
+      "formality"
+    ],
+    "difficulty": null,
+    "id": 126
+  },
+  {
+    "type": "idiom",
+    "language": "English",
+    "category": "",
+    "front": "we must have reduced the issues, if we were..",
+    "back": "have the way in words",
+    "example": "",
+    "tags": [
+      "formality"
+    ],
+    "difficulty": null,
+    "id": 127
+  },
+  {
+    "type": "idiom",
+    "language": "English",
+    "category": "",
+    "front": "we must have reduced the issues, if we were..",
+    "back": "have the way in words",
+    "example": "",
+    "tags": [
+      "formality"
+    ],
+    "difficulty": null,
+    "id": 128
+  },
+  {
+    "type": "idiom",
+    "language": "English",
+    "category": "",
+    "front": "like father, like son",
+    "back": "Sons often are similar to their parents",
+    "example": "",
+    "tags": [
+      "formality"
+    ],
+    "difficulty": null,
+    "id": 129
+  },
+  {
+    "type": "idiom",
+    "language": "English",
+    "category": "",
+    "front": "Then again",
+    "back": "Contradictory",
+    "example": "",
+    "tags": [
+      "formality"
+    ],
+    "difficulty": null,
+    "id": 130
+  },
+  {
+    "type": "idiom",
+    "language": "English",
+    "category": "",
+    "front": "straigh the horses mouth",
+    "back": "Contradictory",
+    "example": "",
+    "tags": [
+      "formality"
+    ],
+    "difficulty": null,
+    "id": 131
+  },
+  {
+    "type": "idiom",
+    "language": "English",
+    "category": "",
+    "front": "Acid test",
+    "back": "Proves the effectiveness of something",
+    "example": "",
+    "tags": [
+      ""
+    ],
+    "difficulty": null,
+    "id": 132
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "better late than never",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 133
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "the more diverse the team members' backgrouds, the greather collaboration and innovation we can expect",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 134
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "the more alignment between individual and company values, the higher the job satisfaction and engagement levels are",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 135
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "The less a leader beats around the bush, the more likely things are to get done",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 136
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "I am really drawn to laura's leadership style",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 137
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "Laura used to be a really prominent leader",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 138
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "If needed,.... If necessary, If required.... Instead of If it is required..",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 139
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "I had a mate who would boast about his knowledge",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 140
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "When I first started working remotly, I would check (revisaba) my emails every 10 minutes to make sure I didn't miss anything",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 141
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "In my previous job, I would stay late to finish reports before deadlines",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 142
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "My manager would always encourage us (nos animaba) to take short breaks to stay focused",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 143
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "When I worked in a team, we would have brainstorming sessions every friday morning",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 144
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "In the past when facing challenges, alex would remain focused on the objectives",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 145
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "Rarely will innovative ideas be welcomed so enthusiastically",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 146
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "Not only are their insights valuable, but they are also appreciated by the entire team",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 147
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "not only does the manager articulate clear goals, but she will also keep the team motivated to achieve them",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 148
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "rarely do you see such innovative solutions to complex problems implemented with such enthusiasm",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 149
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "Rarely do you see challenges addressed as proactively",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 150
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "Feeling overwhelmed by social pressures, many teenagers struggle with mental health issues",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 151
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "striving for acceptance",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 152
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "hoping to avoid social exclusion",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 153
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "my peers influence",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 154
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "beats around the bush",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 155
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "take the bull by the horns",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 156
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "The campus was big, but even so, I could find my way around",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 157
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "I was always organized but even then, I struggled with time management in college",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 158
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "I was able to balance my social lige and coursework, but only by sacrificing sleep",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 159
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "I was excited for the seminar, but only two people showed up",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 160
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "I had to write a paper, but it was only then that I realized I had just a week to finish it",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 161
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "Having said that, social pressure also lead to stress and burnout",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 162
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "Having said that, it is important to recognize the benefits of working hard",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 163
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "\"Having said that\" acknowledges a potential counterargument, while \"but then again\" presents a different perspective on the same topic",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 164
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "trust me",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 165
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "come here",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 166
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "Not only does he have the necessary education, but he also",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 167
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "If I had had more money, I would be richer",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 168
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "If I had",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 169
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "If I hadn't eaten so much cake, I wouldn't feel sick now",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 170
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "I would be happier If I had said",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 171
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "It's always better to address misunderstandings on the spot so they don't escalate later on",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 172
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "I'm 100% sure Jhon MUST have been angry about the way lisa corrected him",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 173
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "I shouldn't have yelled at him. It was too agressive",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 174
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "I cannot always  be as hard as nails.",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 175
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "Off topic: fuera de contexto",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 176
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "I was wondering IF we could meet later today to discuss the digital learning platform",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 177
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "WOULD you mind TELLING me when the registration for this queater's traning sessions starts",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 178
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "straight from the hourse's mouth",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 179
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "If it is adventageous that he conect (Subjuntive)",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 180
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "I propose that the team be promoted for their excellent results",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 181
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "The progessional development plan proposes that workshops be implemented to enhance employees' skills",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 182
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "It is essential that the project timeline be followd to ensure timely completion.",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 183
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "The proposal recommends that additional resources be allocated for research purposes",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 184
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "THe team leader proposed that a comprenhensive report be completed by the end of the week",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 185
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "My brother, an accomplished pianist, will perform tonight",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 186
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "The tall and strong basketball player, lebron James, scored a lot of points.",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 187
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "My favorute hobby, playing the guitar, keeps me entertained",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 188
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "Some times it's important to push back when discussing ideas in order to look into other alternatives",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 189
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "I'm afraid I take issue with your idea, I dont think it will work",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 190
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "I tried to argue but he countered that the plans were not finished",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 191
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "Are you aware of the challenges .....",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 192
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "I often plays devil's advocate in team discussions to make sure there's room for the ideas",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 193
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "Appositive",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 194
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "Bet I would've",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 195
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "Adjuntive",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 196
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "If you fall, get back up",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 197
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "When did you move to chicago?",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 198
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "Get down to brass tacks",
+    "back": "manos a la obra",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 199
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "",
+    "back": "Seeing the words daily burns them into memory",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 200
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "",
+    "front": "yummy",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 201
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "Preprositions",
+    "front": "I found it ON a website about computers",
+    "back": "",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 202
+  }
+]
