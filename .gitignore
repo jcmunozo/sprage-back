@@ -1,0 +1,32 @@
+# Node.js
+node_modules/
+dist/
+build/
+.env
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# OS
+.DS_Store
+.vscode/
+
+# Editor directories and files
+.idea/
+.project
+.classpath
+*.swp
+*.bak
+*.orig
+*.pyc
+*.pyo
+.python-version
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.eslintcache
