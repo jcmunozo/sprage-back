@@ -2340,5 +2340,16 @@
     "tags": [],
     "difficulty": null,
     "id": 202
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "words",
+    "front": "Showcase",
+    "back": "To display or exibit something, highlighting its best advantages",
+    "example": "",
+    "tags": [],
+    "difficulty": null,
+    "id": 202
   }
 ]
