@@ -2333,9 +2333,9 @@
   {
     "type": "vocabulary",
     "language": "English",
-    "category": "Preprositions",
-    "front": "",
-    "back": "",
+    "category": "words",
+    "front": "Groundbreaking",
+    "back": "Something innovative or pioneering, leading to significant advancements or changes",
     "example": "",
     "tags": [],
     "difficulty": null,
