@@ -2364,6 +2364,14 @@
     "id": 206
   },
   {
-
+    "type": "vocabulary",
+    "language": "English",
+    "category": "words",
+    "front": "Despite",
+    "back": "A pesar de",
+    "example": "Despite the initial price difference, I think we can move forward if we make some adjustment",
+    "tags": [],
+    "difficulty": null,
+    "id": 206
   }
 ]
