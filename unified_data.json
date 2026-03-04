@@ -2374,4 +2374,15 @@
     "difficulty": "intermediate",
     "id": 207
   }
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "words",
+    "front": "move forward",
+    "back": "moverse hacia adelante",
+    "example": "We need to keep moving forward!",
+    "tags": [],
+    "difficulty": "intermediate",
+    "id": 207
+  }
 ]
