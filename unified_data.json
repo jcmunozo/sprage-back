@@ -2384,5 +2384,16 @@
     "tags": [],
     "difficulty": "intermediate",
     "id": 208
+  },
+  {
+    "type": "vocabulary",
+    "language": "English",
+    "category": "Idiom",
+    "front": "Cross that bridge when you come to it",
+    "back": "Address a problem or situation only when it arises",
+    "example": "Enfrenta un problema solo cuando lo tengas en frente",
+    "tags": [],
+    "difficulty": "intermediate",
+    "id": 208
   }
 ]
