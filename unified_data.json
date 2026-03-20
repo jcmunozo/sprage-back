@@ -2397,11 +2397,11 @@
     "id": 209
   },
   {
-    "type": "vocabulary",
+    "type": "gramatic",
     "language": "English",
-    "category": "Idiom",
-    "front": "mittens",
-    "back": "algo como de gatos",
+    "category": "",
+    "front": "When we are sure something is not true, me use can't",
+    "back": "Cuando no estamos seguros sobre algo decimos can't",
     "example": "",
     "tags": [],
     "difficulty": "intermediate",
