@@ -2419,13 +2419,13 @@
     ],
     "difficulty": null,
     "id": 211
-  }
+  },
   {
     "type": "vocabulary",
     "language": "English",
     "category": "",
-    "front": "Groundbreaking",
-    "back": "To get very excited about a particular technology or technical topic",
+    "front": "underdog",
+    "back": "",
     "example": "",
     "tags": [
       "formality"
