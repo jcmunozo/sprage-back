@@ -2,8 +2,6 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model, Types } from 'mongoose';
 import { Card, CardDocument } from './schemas/card.schema';
-import * as fs from 'fs';
-import * as path from 'path';
 
 @Injectable()
 export class CardsService {
@@ -51,43 +49,29 @@ export class CardsService {
     return { message: 'Card removed' };
   }
 
-  async importUnifiedData(userId: string): Promise<{ message: string; importedCount: number }> {
-    try {
-      const filePath = path.join(process.cwd(), 'unified_data.json');
-      if (!fs.existsSync(filePath)) {
-        return { message: 'unified_data.json not found', importedCount: 0 };
-      }
-      const data = fs.readFileSync(filePath, 'utf8');
-      const cardsData = JSON.parse(data);
+  async importCards(userId: string, cardsData: any[]): Promise<{ message: string; importedCount: number }> {
+    const userObjectId = new Types.ObjectId(userId);
 
-      let importedCount = 0;
+    // Fetch all existing front+back pairs in one query to avoid N+1
+    const existing = await this.cardModel
+      .find({ userId: userObjectId })
+      .select('front back')
+      .lean()
+      .exec();
+    const existingSet = new Set(existing.map((c) => `${c.front}||${c.back}`));
 
-      for (const item of cardsData) {
-        // We can check if a card with the same front/back already exists for this user
-        const existingCard = await this.cardModel.findOne({
-          userId: new Types.ObjectId(userId),
-          front: item.front,
-          back: item.back
-        });
+    const toInsert = cardsData
+      .filter((item) => !existingSet.has(`${item.front}||${item.back}`))
+      .map(({ id, ...cardData }) => ({
+        ...cardData,
+        userId: userObjectId,
+        ...(id !== undefined && { externalId: id }),
+      }));
 
-        if (!existingCard) {
-          const { id, ...cardData } = item; // Remove old numeric ID
-          const newCard = new this.cardModel({
-            ...cardData,
-            userId: new Types.ObjectId(userId),
-            externalId: id, // Keep it as externalId if needed
-          });
-          await newCard.save();
-          importedCount++;
-        }
-      }
-
-      return {
-        message: 'Cards import complete',
-        importedCount,
-      };
-    } catch (error) {
-      throw new Error(`Error importing cards: ${error.message}`);
+    if (toInsert.length > 0) {
+      await this.cardModel.insertMany(toInsert, { ordered: false });
     }
+
+    return { message: 'Cards import complete', importedCount: toInsert.length };
   }
 }

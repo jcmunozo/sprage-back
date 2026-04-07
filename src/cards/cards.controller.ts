@@ -13,8 +13,8 @@ export class CardsController {
   }
 
   @Post('import')
-  import(@Request() req: any) {
-    return this.cardsService.importUnifiedData(req.user.id);
+  import(@Request() req: any, @Body() body: { cards: any[] }) {
+    return this.cardsService.importCards(req.user.id, body.cards ?? []);
   }
 
   @Get()

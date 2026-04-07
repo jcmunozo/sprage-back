@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, UseGuards, Request } from '@nestjs/common';
+import { Controller, Get, Post, Body, UseGuards, Request, BadRequestException } from '@nestjs/common';
 import { ProgressService } from './progress.service';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 
@@ -15,6 +15,12 @@ export class ProgressController {
   @Post('review')
   recordReview(@Request() req: any, @Body() body: any) {
     const { cardId, quality } = body;
+    if (!cardId) {
+      throw new BadRequestException('cardId is required');
+    }
+    if (quality === undefined || quality === null || !Number.isInteger(quality) || quality < 0 || quality > 5) {
+      throw new BadRequestException('quality must be an integer between 0 and 5');
+    }
     return this.progressService.recordReview(req.user.id, cardId, quality);
   }
 }

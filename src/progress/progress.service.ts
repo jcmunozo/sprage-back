@@ -1,11 +1,15 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model, Types } from 'mongoose';
 import { Progress, ProgressDocument } from './schemas/progress.schema';
+import { Card, CardDocument } from '../cards/schemas/card.schema';
 
 @Injectable()
 export class ProgressService {
-  constructor(@InjectModel(Progress.name) private progressModel: Model<ProgressDocument>) {}
+  constructor(
+    @InjectModel(Progress.name) private progressModel: Model<ProgressDocument>,
+    @InjectModel(Card.name) private cardModel: Model<CardDocument>,
+  ) {}
 
   async getOrCreateProgress(userId: string, cardId: string): Promise<ProgressDocument> {
     let progress = await this.progressModel.findOne({
@@ -50,12 +54,11 @@ export class ProgressService {
     progress.repetition = repetition;
     progress.easeFactor = easeFactor;
     progress.interval = interval;
-    
+
     const nextReview = new Date();
     nextReview.setDate(nextReview.getDate() + interval);
     progress.nextReviewDate = nextReview;
 
-    // Update status
     if (quality < 3) {
       progress.status = 'lapsed';
     } else if (repetition > 3) {
@@ -67,10 +70,20 @@ export class ProgressService {
     return progress.save();
   }
 
-  async getDueCards(userId: string): Promise<any[]> {
-    return this.progressModel.find({
-      userId: new Types.ObjectId(userId),
-      nextReviewDate: { $lte: new Date() },
-    }).populate('cardId').exec();
+  async getDueCards(userId: string): Promise<{ due: ProgressDocument[]; new: CardDocument[] }> {
+    const userObjectId = new Types.ObjectId(userId);
+
+    const dueProgress = await this.progressModel
+      .find({ userId: userObjectId, nextReviewDate: { $lte: new Date() } })
+      .populate('cardId')
+      .exec();
+
+    const startedCardIds = await this.progressModel.distinct('cardId', { userId: userObjectId });
+
+    const newCards = await this.cardModel
+      .find({ userId: userObjectId, _id: { $nin: startedCardIds } })
+      .exec();
+
+    return { due: dueProgress, new: newCards };
   }
 }
