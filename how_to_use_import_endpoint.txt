@@ -16,7 +16,7 @@ Endpoint Details:
         Example: {"message":"Vocabulary import complete","importedCount":X,"updatedCount":Y}
     -   Error (500 Internal Server Error): Returns a JSON object with an error message if something goes wrong during the file reading, parsing, or database operations.
 
-Prerequisites:
+Prerequisites you need:
 --------------
 1.  **Running Server**: Ensure your Node.js backend server is running. You can start it by navigating to your project directory in the terminal and running:
     ```bash
