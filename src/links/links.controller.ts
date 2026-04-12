@@ -1,0 +1,27 @@
+import { Controller, Get, Post, Body, Param, Delete, UseGuards, Request, Query } from '@nestjs/common';
+import { LinksService } from './links.service';
+import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
+
+@Controller('links')
+@UseGuards(JwtAuthGuard)
+export class LinksController {
+  constructor(private readonly linksService: LinksService) {}
+
+  @Post()
+  create(@Request() req: any, @Body() createLinkDto: any) {
+    return this.linksService.create(req.user.id, createLinkDto);
+  }
+
+  @Get()
+  findAll(@Request() req: any, @Query('language') language?: string) {
+    if (language) {
+      return this.linksService.findByLanguage(req.user.id, language);
+    }
+    return this.linksService.findAllByUser(req.user.id);
+  }
+
+  @Delete(':id')
+  remove(@Request() req: any, @Param('id') id: string) {
+    return this.linksService.remove(id, req.user.id);
+  }
+}
