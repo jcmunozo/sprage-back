@@ -13,9 +13,9 @@ export class LinksController {
   }
 
   @Get()
-  findAll(@Request() req: any, @Query('language') language?: string) {
-    if (language) {
-      return this.linksService.findByLanguage(req.user.id, language);
+  findAll(@Request() req: any, @Query('languageId') languageId?: string) {
+    if (languageId) {
+      return this.linksService.findByLanguage(req.user.id, languageId);
     }
     return this.linksService.findAllByUser(req.user.id);
   }

@@ -14,8 +14,8 @@ export class Link {
   @Prop()
   description: string;
 
-  @Prop({ required: true })
-  language: string;
+  @Prop({ type: MongooseSchema.Types.ObjectId, ref: 'Language', required: true })
+  languageId: MongooseSchema.Types.ObjectId;
 }
 
 export const LinkSchema = SchemaFactory.createForClass(Link);

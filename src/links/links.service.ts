@@ -8,20 +8,27 @@ export class LinksService {
   constructor(@InjectModel(Link.name) private linkModel: Model<LinkDocument>) {}
 
   async create(userId: string, createLinkDto: any): Promise<LinkDocument> {
+    const { url, description, languageId } = createLinkDto;
     const createdLink = new this.linkModel({
-      ...createLinkDto,
       userId: new Types.ObjectId(userId),
+      url,
+      description,
+      languageId: new Types.ObjectId(languageId),
     });
     return createdLink.save();
   }
 
   async findAllByUser(userId: string): Promise<Link[]> {
-    return this.linkModel.find({ userId: new Types.ObjectId(userId) }).exec();
+    return this.linkModel
+      .find({ userId: new Types.ObjectId(userId) })
+      .populate('languageId')
+      .exec();
   }
 
-  async findByLanguage(userId: string, language: string): Promise<Link[]> {
+  async findByLanguage(userId: string, languageId: string): Promise<Link[]> {
     return this.linkModel
-      .find({ userId: new Types.ObjectId(userId), language })
+      .find({ userId: new Types.ObjectId(userId), languageId: new Types.ObjectId(languageId) })
+      .populate('languageId')
       .exec();
   }
 
