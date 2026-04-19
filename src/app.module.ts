@@ -7,6 +7,7 @@ import { DecksModule } from './decks/decks.module';
 import { CardsModule } from './cards/cards.module';
 import { ProgressModule } from './progress/progress.module';
 import { LinksModule } from './links/links.module';
+import { LanguagesModule } from './languages/languages.module';
 
 @Module({
   imports: [
@@ -26,6 +27,7 @@ import { LinksModule } from './links/links.module';
     CardsModule,
     ProgressModule,
     LinksModule,
+    LanguagesModule,
   ],
 })
 export class AppModule {}
