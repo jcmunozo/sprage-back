@@ -1,4 +1,4 @@
-How to Use the /api/vocabulary/import Endpoint Pending
+How to Use the /api/vocabulary/import Endpoint 
 
 This document explains how to use the POST /api/vocabulary/import endpoint to populate your MongoDB database with data from the 'unified_data.json' file.
 
