@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Param, Delete, UseGuards, Request, Query } from '@nestjs/common';
+import { Controller, Get, Post, Patch, Body, Param, Delete, UseGuards, Request, Query } from '@nestjs/common';
 import { LinksService } from './links.service';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 
@@ -18,6 +18,11 @@ export class LinksController {
       return this.linksService.findByLanguage(req.user.id, languageId);
     }
     return this.linksService.findAllByUser(req.user.id);
+  }
+
+  @Patch(':id')
+  update(@Request() req: any, @Param('id') id: string, @Body() updateLinkDto: any) {
+    return this.linksService.update(id, req.user.id, updateLinkDto);
   }
 
   @Delete(':id')

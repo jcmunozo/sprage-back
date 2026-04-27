@@ -15,7 +15,22 @@ export class LinksService {
       description,
       languageId: new Types.ObjectId(languageId),
     });
-    return createdLink.save();
+    const saved = await createdLink.save();
+    return saved.populate('languageId');
+  }
+
+  async update(id: string, userId: string, updateDto: any): Promise<LinkDocument> {
+    const { url, description } = updateDto;
+    const updated = await this.linkModel
+      .findOneAndUpdate(
+        { _id: new Types.ObjectId(id), userId: new Types.ObjectId(userId) },
+        { $set: { url, description } },
+        { new: true },
+      )
+      .populate('languageId')
+      .exec();
+    if (!updated) throw new NotFoundException(`Link with ID ${id} not found`);
+    return updated;
   }
 
   async findAllByUser(userId: string): Promise<Link[]> {
