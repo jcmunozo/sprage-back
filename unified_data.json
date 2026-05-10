@@ -1895,18 +1895,18 @@
     "type": "vocabulary",
     "language": "English",
     "category": "words",
-    "front": "budget allocation, breadwinner",
+    "front": "budget",
     "back": "",
     "example": "",
     "tags": ["competition", "motivation"],
     "difficulty": "intermediate",
     "id": 212
-  }
+  },
   {
     "type": "vocabulary",
     "language": "English",
     "category": "words",
-    "front": "budget allocation, breadwinner",
+    "front": "allocation, breadwinner",
     "back": "",
     "example": "",
     "tags": ["competition", "motivation"],
