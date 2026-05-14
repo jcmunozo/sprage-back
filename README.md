@@ -8,7 +8,7 @@ A powerful, flexible, and user-centric backend for learning idioms, vocabulary, 
 - **Flexible Card Schema**: Save any fields you want on a card (it will be saved to Mongo even if not in the schema).
 - **Decks/Collections**: Organize your cards into decks.
 - **SRS Engine**: Uses the SM-2 algorithm to calculate next review dates.
-- **Bulk Import**: Import your existing `unified_data.json` directly into your account.
+- **Bulk Import**: Import your existing `unified_data.json` directly into your account. [This is used?]
 
 ---
 
