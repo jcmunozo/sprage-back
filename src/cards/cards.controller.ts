@@ -31,7 +31,7 @@ import {
 
 @ApiTags('Cards')
 @ApiBearerAuth('JWT-auth')
-@ApiUnauthorizedResponse({ description: 'JWT ausente o inválido.' })
+@ApiUnauthorizedResponse({ description: 'Missing or invalid JWT.' })
 @Controller('cards')
 @UseGuards(JwtAuthGuard)
 export class CardsController {
@@ -39,8 +39,9 @@ export class CardsController {
 
   @Post()
   @ApiOperation({
-    summary: 'Crear una tarjeta',
-    description: 'El schema admite campos extra (strict: false); cualquier propiedad adicional se persiste.',
+    summary: 'Create a card',
+    description:
+      'The schema accepts extra fields (strict: false); any additional property is persisted.',
   })
   @ApiCreatedResponse({ type: CardResponseDto })
   create(@Request() req: any, @Body() createCardDto: CreateCardDto) {
@@ -49,9 +50,9 @@ export class CardsController {
 
   @Post('import')
   @ApiOperation({
-    summary: 'Importar tarjetas en bloque',
+    summary: 'Bulk import cards',
     description:
-      'Inserta varias tarjetas en una sola llamada. Se omiten las duplicadas por par (front, back) ya existentes para el usuario.',
+      'Inserts multiple cards in a single call. Cards with a (front, back) pair already existing for the user are skipped.',
   })
   @ApiCreatedResponse({ type: ImportCardsResponseDto })
   import(@Request() req: any, @Body() body: ImportCardsDto) {
@@ -59,35 +60,35 @@ export class CardsController {
   }
 
   @Get()
-  @ApiOperation({ summary: 'Listar tarjetas del usuario' })
+  @ApiOperation({ summary: "List the user's cards" })
   @ApiOkResponse({ type: [CardResponseDto] })
   findAll(@Request() req: any) {
     return this.cardsService.findAllByUser(req.user.id);
   }
 
   @Get(':id')
-  @ApiOperation({ summary: 'Obtener una tarjeta por ID' })
-  @ApiParam({ name: 'id', description: 'ID de la tarjeta (ObjectId)' })
+  @ApiOperation({ summary: 'Get a card by ID' })
+  @ApiParam({ name: 'id', description: 'Card ID (ObjectId)' })
   @ApiOkResponse({ type: CardResponseDto })
-  @ApiNotFoundResponse({ description: 'Tarjeta no encontrada.' })
+  @ApiNotFoundResponse({ description: 'Card not found.' })
   findOne(@Request() req: any, @Param('id') id: string) {
     return this.cardsService.findOne(id, req.user.id);
   }
 
   @Patch(':id')
-  @ApiOperation({ summary: 'Actualizar parcialmente una tarjeta' })
-  @ApiParam({ name: 'id', description: 'ID de la tarjeta (ObjectId)' })
+  @ApiOperation({ summary: 'Partially update a card' })
+  @ApiParam({ name: 'id', description: 'Card ID (ObjectId)' })
   @ApiOkResponse({ type: CardResponseDto })
-  @ApiNotFoundResponse({ description: 'Tarjeta no encontrada.' })
+  @ApiNotFoundResponse({ description: 'Card not found.' })
   update(@Request() req: any, @Param('id') id: string, @Body() updateCardDto: UpdateCardDto) {
     return this.cardsService.update(id, req.user.id, updateCardDto);
   }
 
   @Delete(':id')
-  @ApiOperation({ summary: 'Eliminar una tarjeta' })
-  @ApiParam({ name: 'id', description: 'ID de la tarjeta (ObjectId)' })
+  @ApiOperation({ summary: 'Delete a card' })
+  @ApiParam({ name: 'id', description: 'Card ID (ObjectId)' })
   @ApiOkResponse({ schema: { example: { message: 'Card removed' } } })
-  @ApiNotFoundResponse({ description: 'Tarjeta no encontrada.' })
+  @ApiNotFoundResponse({ description: 'Card not found.' })
   remove(@Request() req: any, @Param('id') id: string) {
     return this.cardsService.remove(id, req.user.id);
   }

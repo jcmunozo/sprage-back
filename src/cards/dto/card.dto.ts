@@ -10,37 +10,43 @@ import {
 import { Type } from 'class-transformer';
 
 export class CreateCardDto {
-  @ApiProperty({ example: 'casa', description: 'Anverso de la tarjeta' })
+  @ApiProperty({ example: 'hello', description: 'Card front side' })
   @IsString()
   @IsNotEmpty()
   front: string;
 
-  @ApiProperty({ example: 'house', description: 'Reverso de la tarjeta' })
+  @ApiProperty({ example: 'hola', description: 'Card back side' })
   @IsString()
   @IsNotEmpty()
   back: string;
 
-  @ApiPropertyOptional({ example: '6650f1c8e2a1b4d3f1234567', description: 'Mazo al que pertenece' })
+  @ApiPropertyOptional({
+    example: '6650f1c8e2a1b4d3f1234567',
+    description: 'Deck this card belongs to',
+  })
   @IsOptional()
   @IsMongoId()
   deckId?: string;
 
-  @ApiPropertyOptional({ example: 'vocabulary', description: 'Tipo de tarjeta (vocabulary, grammar, idiom...)' })
+  @ApiPropertyOptional({
+    example: 'vocabulary',
+    description: 'Card type (vocabulary, grammar, idiom...)',
+  })
   @IsOptional()
   @IsString()
   type?: string;
 
-  @ApiPropertyOptional({ example: 'en' })
+  @ApiPropertyOptional({ example: 'es' })
   @IsOptional()
   @IsString()
   language?: string;
 
-  @ApiPropertyOptional({ example: 'home' })
+  @ApiPropertyOptional({ example: 'greetings' })
   @IsOptional()
   @IsString()
   category?: string;
 
-  @ApiPropertyOptional({ example: 'I am going home.' })
+  @ApiPropertyOptional({ example: 'Hello, how are you?' })
   @IsOptional()
   @IsString()
   example?: string;
@@ -57,7 +63,7 @@ export class UpdateCardDto extends PartialType(CreateCardDto) {}
 export class ImportCardsDto {
   @ApiProperty({
     type: [CreateCardDto],
-    description: 'Lista de tarjetas a importar. Las duplicadas por (front, back) se omiten.',
+    description: 'List of cards to import. Duplicates by (front, back) pair are skipped.',
   })
   @IsArray()
   @ValidateNested({ each: true })
@@ -69,7 +75,7 @@ export class ImportCardsResponseDto {
   @ApiProperty({ example: 'Cards import complete' })
   message: string;
 
-  @ApiProperty({ example: 42, description: 'Número de tarjetas efectivamente insertadas' })
+  @ApiProperty({ example: 42, description: 'Number of cards actually inserted' })
   importedCount: number;
 }
 
@@ -83,22 +89,22 @@ export class CardResponseDto {
   @ApiPropertyOptional({ example: '6650f1c8e2a1b4d3f1230111' })
   deckId?: string;
 
-  @ApiProperty({ example: 'casa' })
+  @ApiProperty({ example: 'hello' })
   front: string;
 
-  @ApiProperty({ example: 'house' })
+  @ApiProperty({ example: 'hola' })
   back: string;
 
   @ApiPropertyOptional({ example: 'vocabulary' })
   type?: string;
 
-  @ApiPropertyOptional({ example: 'en' })
+  @ApiPropertyOptional({ example: 'es' })
   language?: string;
 
-  @ApiPropertyOptional({ example: 'home' })
+  @ApiPropertyOptional({ example: 'greetings' })
   category?: string;
 
-  @ApiPropertyOptional({ example: 'I am going home.' })
+  @ApiPropertyOptional({ example: 'Hello, how are you?' })
   example?: string;
 
   @ApiPropertyOptional({ type: [String], example: ['noun'] })

@@ -25,13 +25,13 @@ export class AuthController {
 
   @Post('register')
   @ApiOperation({
-    summary: 'Registrar un nuevo usuario',
-    description: 'Crea una cuenta y devuelve un JWT listo para usar. El email debe ser único.',
+    summary: 'Register a new user',
+    description: 'Creates an account and returns a ready-to-use JWT. The email must be unique.',
   })
   @ApiBody({ type: RegisterDto })
-  @ApiCreatedResponse({ type: AuthResponseDto, description: 'Usuario creado; access_token emitido.' })
-  @ApiBadRequestResponse({ description: 'Faltan email, password o username.' })
-  @ApiConflictResponse({ description: 'Ya existe un usuario con ese email.' })
+  @ApiCreatedResponse({ type: AuthResponseDto, description: 'User created; access_token issued.' })
+  @ApiBadRequestResponse({ description: 'Missing email, password or username.' })
+  @ApiConflictResponse({ description: 'A user with that email already exists.' })
   async register(@Body() body: RegisterDto) {
     const { email, password, username } = body;
     if (!email || !password || !username) {
@@ -42,12 +42,12 @@ export class AuthController {
 
   @Post('login')
   @ApiOperation({
-    summary: 'Iniciar sesión',
-    description: 'Valida credenciales y devuelve un JWT con expiración de 1 día.',
+    summary: 'Log in',
+    description: 'Validates credentials and returns a JWT with 1-day expiration.',
   })
   @ApiBody({ type: LoginDto })
-  @ApiOkResponse({ type: AuthResponseDto, description: 'Credenciales válidas; access_token emitido.' })
-  @ApiUnauthorizedResponse({ description: 'Credenciales inválidas.' })
+  @ApiOkResponse({ type: AuthResponseDto, description: 'Valid credentials; access_token issued.' })
+  @ApiUnauthorizedResponse({ description: 'Invalid credentials.' })
   async login(@Body() body: LoginDto) {
     const { email, password } = body;
     const user = await this.authService.validateUser(email, password);

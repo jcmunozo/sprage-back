@@ -19,8 +19,8 @@ async function bootstrap() {
   const swaggerConfig = new DocumentBuilder()
     .setTitle('Sprage API')
     .setDescription(
-      'Backend de Sprage: sistema de repetición espaciada (SRS) para aprendizaje de idiomas. ' +
-        'Gestión de mazos, tarjetas, idiomas, enlaces de referencia y progreso de estudio mediante el algoritmo SM-2.',
+      'Sprage backend: spaced repetition system (SRS) for language learning. ' +
+        'Manages decks, cards, languages, reference links and study progress through the SM-2 algorithm.',
     )
     .setVersion('1.0.0')
     .addBearerAuth(
@@ -28,16 +28,16 @@ async function bootstrap() {
         type: 'http',
         scheme: 'bearer',
         bearerFormat: 'JWT',
-        description: 'Introduce el access_token devuelto por /auth/login',
+        description: 'Paste the access_token returned by /auth/login',
       },
       'JWT-auth',
     )
-    .addTag('Auth', 'Registro e inicio de sesión')
-    .addTag('Decks', 'Mazos de tarjetas del usuario')
-    .addTag('Cards', 'Tarjetas de estudio')
-    .addTag('Progress', 'Revisiones y planificación SM-2')
-    .addTag('Languages', 'Idiomas configurados por el usuario')
-    .addTag('Links', 'Enlaces de referencia por idioma')
+    .addTag('Auth', 'Registration and login')
+    .addTag('Decks', "User's card decks")
+    .addTag('Cards', 'Study cards')
+    .addTag('Progress', 'SM-2 reviews and scheduling')
+    .addTag('Languages', 'Languages configured by the user')
+    .addTag('Links', 'Reference links by language')
     .build();
 
   const document = SwaggerModule.createDocument(app, swaggerConfig);

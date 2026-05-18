@@ -2,16 +2,20 @@ import { ApiProperty } from '@nestjs/swagger';
 import { IsEmail, IsNotEmpty, IsString, MinLength } from 'class-validator';
 
 export class RegisterDto {
-  @ApiProperty({ example: 'jane@example.com', description: 'Email único del usuario' })
+  @ApiProperty({ example: 'jane@example.com', description: 'Unique user email' })
   @IsEmail()
   email: string;
 
-  @ApiProperty({ example: 'P@ssw0rd!', minLength: 6, description: 'Contraseña en texto plano; se almacena con bcrypt' })
+  @ApiProperty({
+    example: 'P@ssw0rd!',
+    minLength: 6,
+    description: 'Plain-text password; stored hashed with bcrypt',
+  })
   @IsString()
   @MinLength(6)
   password: string;
 
-  @ApiProperty({ example: 'jane', description: 'Nombre de usuario visible' })
+  @ApiProperty({ example: 'jane', description: 'Display username' })
   @IsString()
   @IsNotEmpty()
   username: string;
@@ -42,7 +46,7 @@ export class AuthUserDto {
 export class AuthResponseDto {
   @ApiProperty({
     example: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...',
-    description: 'JWT con expiración de 1 día. Usar como Bearer token.',
+    description: 'JWT with 1-day expiration. Use as a Bearer token.',
   })
   access_token: string;
 

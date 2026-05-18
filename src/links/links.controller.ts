@@ -27,14 +27,14 @@ import { CreateLinkDto, LinkResponseDto, UpdateLinkDto } from './dto/link.dto';
 
 @ApiTags('Links')
 @ApiBearerAuth('JWT-auth')
-@ApiUnauthorizedResponse({ description: 'JWT ausente o inválido.' })
+@ApiUnauthorizedResponse({ description: 'Missing or invalid JWT.' })
 @Controller('links')
 @UseGuards(JwtAuthGuard)
 export class LinksController {
   constructor(private readonly linksService: LinksService) {}
 
   @Post()
-  @ApiOperation({ summary: 'Crear un enlace asociado a un idioma' })
+  @ApiOperation({ summary: 'Create a link associated with a language' })
   @ApiCreatedResponse({ type: LinkResponseDto })
   create(@Request() req: any, @Body() createLinkDto: CreateLinkDto) {
     return this.linksService.create(req.user.id, createLinkDto);
@@ -42,10 +42,10 @@ export class LinksController {
 
   @Get()
   @ApiOperation({
-    summary: 'Listar enlaces del usuario',
-    description: 'Si se pasa `languageId` filtra solo los enlaces de ese idioma.',
+    summary: "List the user's links",
+    description: 'If `languageId` is provided, only links for that language are returned.',
   })
-  @ApiQuery({ name: 'languageId', required: false, description: 'Filtrar por idioma (ObjectId)' })
+  @ApiQuery({ name: 'languageId', required: false, description: 'Filter by language (ObjectId)' })
   @ApiOkResponse({ type: [LinkResponseDto] })
   findAll(@Request() req: any, @Query('languageId') languageId?: string) {
     if (languageId) {
@@ -55,19 +55,19 @@ export class LinksController {
   }
 
   @Patch(':id')
-  @ApiOperation({ summary: 'Actualizar url o descripción de un enlace' })
-  @ApiParam({ name: 'id', description: 'ID del enlace (ObjectId)' })
+  @ApiOperation({ summary: "Update a link's url or description" })
+  @ApiParam({ name: 'id', description: 'Link ID (ObjectId)' })
   @ApiOkResponse({ type: LinkResponseDto })
-  @ApiNotFoundResponse({ description: 'Enlace no encontrado.' })
+  @ApiNotFoundResponse({ description: 'Link not found.' })
   update(@Request() req: any, @Param('id') id: string, @Body() updateLinkDto: UpdateLinkDto) {
     return this.linksService.update(id, req.user.id, updateLinkDto);
   }
 
   @Delete(':id')
-  @ApiOperation({ summary: 'Eliminar un enlace' })
-  @ApiParam({ name: 'id', description: 'ID del enlace (ObjectId)' })
+  @ApiOperation({ summary: 'Delete a link' })
+  @ApiParam({ name: 'id', description: 'Link ID (ObjectId)' })
   @ApiOkResponse({ schema: { example: { message: 'Link removed' } } })
-  @ApiNotFoundResponse({ description: 'Enlace no encontrado.' })
+  @ApiNotFoundResponse({ description: 'Link not found.' })
   remove(@Request() req: any, @Param('id') id: string) {
     return this.linksService.remove(id, req.user.id);
   }

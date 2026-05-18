@@ -2,12 +2,12 @@ import { ApiProperty, ApiPropertyOptional, PartialType } from '@nestjs/swagger';
 import { IsBoolean, IsNotEmpty, IsOptional, IsString } from 'class-validator';
 
 export class CreateLanguageDto {
-  @ApiProperty({ example: 'English', description: 'Nombre del idioma' })
+  @ApiProperty({ example: 'English', description: 'Language name' })
   @IsString()
   @IsNotEmpty()
   name: string;
 
-  @ApiPropertyOptional({ example: 'en', description: 'Código ISO 639-1' })
+  @ApiPropertyOptional({ example: 'en', description: 'ISO 639-1 code' })
   @IsOptional()
   @IsString()
   code?: string;

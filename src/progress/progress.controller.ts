@@ -26,7 +26,7 @@ import {
 
 @ApiTags('Progress')
 @ApiBearerAuth('JWT-auth')
-@ApiUnauthorizedResponse({ description: 'JWT ausente o inválido.' })
+@ApiUnauthorizedResponse({ description: 'Missing or invalid JWT.' })
 @Controller('progress')
 @UseGuards(JwtAuthGuard)
 export class ProgressController {
@@ -34,9 +34,9 @@ export class ProgressController {
 
   @Get('due')
   @ApiOperation({
-    summary: 'Obtener tarjetas pendientes y nuevas',
+    summary: 'Get due and new cards',
     description:
-      'Devuelve dos listas: `due` (revisiones cuya fecha ya venció) y `new` (tarjetas que el usuario nunca ha estudiado).',
+      'Returns two lists: `due` (reviews whose date has already expired) and `new` (cards the user has never studied).',
   })
   @ApiOkResponse({ type: DueCardsResponseDto })
   getDue(@Request() req: any) {
@@ -45,13 +45,13 @@ export class ProgressController {
 
   @Post('review')
   @ApiOperation({
-    summary: 'Registrar la revisión de una tarjeta',
+    summary: 'Record a card review',
     description:
-      'Aplica el algoritmo SM-2: ajusta `easeFactor`, `interval`, `repetition` y calcula `nextReviewDate`. ' +
-      '`quality` debe ser un entero 0–5.',
+      'Applies the SM-2 algorithm: updates `easeFactor`, `interval`, `repetition` and computes `nextReviewDate`. ' +
+      '`quality` must be an integer between 0 and 5.',
   })
   @ApiCreatedResponse({ type: ProgressResponseDto })
-  @ApiBadRequestResponse({ description: 'cardId faltante o quality fuera de rango (0–5).' })
+  @ApiBadRequestResponse({ description: 'Missing cardId or quality out of range (0–5).' })
   recordReview(@Request() req: any, @Body() body: RecordReviewDto) {
     const { cardId, quality } = body;
     if (!cardId) {

@@ -2,19 +2,19 @@ import { ApiProperty, ApiPropertyOptional, PartialType } from '@nestjs/swagger';
 import { IsBoolean, IsNotEmpty, IsOptional, IsString } from 'class-validator';
 
 export class CreateDeckDto {
-  @ApiProperty({ example: 'Vocabulario A1', description: 'Nombre del mazo' })
+  @ApiProperty({ example: 'A1 Vocabulary', description: 'Deck name' })
   @IsString()
   @IsNotEmpty()
   name: string;
 
-  @ApiPropertyOptional({ example: 'Tarjetas básicas para nivel A1' })
+  @ApiPropertyOptional({ example: 'Basic cards for A1 level' })
   @IsOptional()
   @IsString()
   description?: string;
 }
 
 export class UpdateDeckDto extends PartialType(CreateDeckDto) {
-  @ApiPropertyOptional({ description: 'Si el mazo es visible públicamente' })
+  @ApiPropertyOptional({ description: 'Whether the deck is publicly visible' })
   @IsOptional()
   @IsBoolean()
   isPublic?: boolean;
@@ -24,10 +24,10 @@ export class DeckResponseDto {
   @ApiProperty({ example: '6650f1c8e2a1b4d3f1234567' })
   _id: string;
 
-  @ApiProperty({ example: 'Vocabulario A1' })
+  @ApiProperty({ example: 'A1 Vocabulary' })
   name: string;
 
-  @ApiPropertyOptional({ example: 'Tarjetas básicas para nivel A1' })
+  @ApiPropertyOptional({ example: 'Basic cards for A1 level' })
   description?: string;
 
   @ApiProperty({ example: '6650f1c8e2a1b4d3f1230000' })
