@@ -2,6 +2,7 @@ import { NestFactory } from '@nestjs/core';
 import { ValidationPipe } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import * as basicAuth from 'express-basic-auth';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
@@ -15,6 +16,21 @@ async function bootstrap() {
   });
 
   app.useGlobalPipes(new ValidationPipe({ whitelist: true, transform: true }));
+
+  const swaggerUser = configService.get<string>('SWAGGER_USER');
+  const swaggerPassword = configService.get<string>('SWAGGER_PASSWORD');
+  if (!swaggerUser || !swaggerPassword) {
+    throw new Error(
+      'SWAGGER_USER and SWAGGER_PASSWORD environment variables are required to protect the API docs.',
+    );
+  }
+  app.use(
+    ['/api/docs', '/api/docs-json'],
+    basicAuth({
+      challenge: true,
+      users: { [swaggerUser]: swaggerPassword },
+    }),
+  );
 
   const swaggerConfig = new DocumentBuilder()
     .setTitle('Sprage API')
