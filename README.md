@@ -1,82 +1,21 @@
 # Sprage Backend (NestJS + MongoDB)
 
-A powerful, flexible, and user-centric backend for learning idioms, vocabulary, and grammar using a Spaced Repetition System (SRS).
+A user-centric backend for learning idioms, vocabulary, and grammar using a Spaced Repetition System (SRS).
+
+## What the App Does
+
+Sprage helps users study language content — idioms, vocabulary, and grammar — through flashcards scheduled with a spaced repetition algorithm. Each user has their own private collection of decks and cards, and the system decides when each card should be reviewed next based on how well the user remembers it.
 
 ## Key Features
 
-- **User Authentication**: Secure JWT-based login and registration.
-- **Flexible Card Schema**: Save any fields you want on a card (it will be saved to Mongo even if not in the schema).
-- **Decks/Collections**: Organize your cards into decks.
-- **SRS Engine**: Uses the SM-2 algorithm to calculate next review dates.
-- **Bulk Import**: Import your existing `unified_data.json` directly into your account. [This is used?]
-
----
-
-## 🚀 API Guide
-
-### 1. Authentication
-First, register or login to get your `access_token`.
-
-**POST `/auth/register`**
-```json
-{
-  "email": "user@example.com",
-  "password": "yourpassword",
-  "username": "learning_king"
-}
-```
-
----
-
-### 2. Creating Cards (Manual)
-You can create a card and save it directly to MongoDB. Any extra fields you add (like `difficulty`, `pronunciation`, `image_url`) will be saved automatically due to our flexible schema.
-
-**POST `/cards`**
-*Headers: `Authorization: Bearer <your_token>`*
-```json
-{
-  "front": "to kick the bucket",
-  "back": "to die",
-  "type": "idiom",
-  "tags": ["slang", "informal"],
-  "example": "He finally kicked the bucket at age 90.",
-  "any_other_field": "This will also be saved in Mongo!"
-}
-```
-
----
-
-### 3. Bulk Import
-If you have a `unified_data.json` in the root folder, you can import it to your account.
-
-**POST `/cards/import`**
-*Headers: `Authorization: Bearer <your_token>`*
-
----
-
-### 4. Learning with SRS (Spaced Repetition)
-Once you have cards, you can review them. The system will tell you when a card is "due".
-
-**GET `/progress/due`**
-*Headers: `Authorization: Bearer <your_token>`*
-Returns all cards that are ready to be reviewed today.
-
-**POST `/progress/review`**
-*Headers: `Authorization: Bearer <your_token>`*
-Submit your review quality (0-5) to update the card's next review date.
-- `0`: Total blackout.
-- `3`: Correct with difficulty.
-- `5`: Perfect response.
-```json
-{
-  "cardId": "65e...",
-  "quality": 4
-}
-```
-
----
+- **User Accounts**: Each user has an isolated workspace with their own decks, cards, and review history.
+- **Flexible Card Content**: Cards support arbitrary fields beyond the base schema, allowing heterogeneous learning material (vocab, grammar, idioms) with varied metadata.
+- **Decks / Collections**: Cards can be organized into decks for structured study.
+- **Spaced Repetition Engine**: Implements the SM-2 algorithm to compute the next review date for each card based on recall quality.
+- **Bulk Content Loading**: Supports importing pre-built card sets into a user's account.
 
 ## 🛠️ Tech Stack
+
 - **Framework**: NestJS
 - **Database**: MongoDB Atlas (Mongoose)
 - **Security**: Passport-JWT, Bcrypt
