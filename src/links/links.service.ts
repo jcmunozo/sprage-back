@@ -1,35 +1,59 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import {
+  BadRequestException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model, Types } from 'mongoose';
 import { Link, LinkDocument } from './schemas/link.schema';
+import { Language, LanguageDocument } from '../languages/schemas/language.schema';
+import { CreateLinkDto, UpdateLinkDto } from './dto/link.dto';
 
 @Injectable()
 export class LinksService {
-  constructor(@InjectModel(Link.name) private linkModel: Model<LinkDocument>) {}
+  constructor(
+    @InjectModel(Link.name) private linkModel: Model<LinkDocument>,
+    @InjectModel(Language.name) private languageModel: Model<LanguageDocument>,
+  ) {}
 
-  async create(userId: string, createLinkDto: any): Promise<LinkDocument> {
-    const { url, description, languageId } = createLinkDto;
-    const createdLink = new this.linkModel({
-      userId: new Types.ObjectId(userId),
-      url,
-      description,
-      languageId: new Types.ObjectId(languageId),
+  private async assertLanguageOwnership(
+    userId: Types.ObjectId,
+    languageId: string,
+  ): Promise<Types.ObjectId> {
+    const langObjectId = new Types.ObjectId(languageId);
+    const exists = await this.languageModel.exists({ _id: langObjectId, userId });
+    if (!exists) {
+      throw new BadRequestException('Invalid languageId');
+    }
+    return langObjectId;
+  }
+
+  async create(userId: string, dto: CreateLinkDto): Promise<LinkDocument> {
+    const userObjectId = new Types.ObjectId(userId);
+    const langObjectId = await this.assertLanguageOwnership(userObjectId, dto.languageId);
+
+    const created = new this.linkModel({
+      userId: userObjectId,
+      url: dto.url,
+      description: dto.description,
+      languageId: langObjectId,
     });
-    const saved = await createdLink.save();
+    const saved = await created.save();
     return saved.populate('languageId');
   }
 
-  async update(id: string, userId: string, updateDto: any): Promise<LinkDocument> {
-    const { url, description } = updateDto;
+  async update(id: string, userId: string, dto: UpdateLinkDto): Promise<LinkDocument> {
     const updated = await this.linkModel
       .findOneAndUpdate(
         { _id: new Types.ObjectId(id), userId: new Types.ObjectId(userId) },
-        { $set: { url, description } },
-        { new: true },
+        { $set: { url: dto.url, description: dto.description } },
+        { new: true, runValidators: true },
       )
       .populate('languageId')
       .exec();
-    if (!updated) throw new NotFoundException(`Link with ID ${id} not found`);
+    if (!updated) {
+      throw new NotFoundException(`Link with ID ${id} not found`);
+    }
     return updated;
   }
 
@@ -42,7 +66,10 @@ export class LinksService {
 
   async findByLanguage(userId: string, languageId: string): Promise<Link[]> {
     return this.linkModel
-      .find({ userId: new Types.ObjectId(userId), languageId: new Types.ObjectId(languageId) })
+      .find({
+        userId: new Types.ObjectId(userId),
+        languageId: new Types.ObjectId(languageId),
+      })
       .populate('languageId')
       .exec();
   }

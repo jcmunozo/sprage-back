@@ -24,10 +24,11 @@ function makeProgress(overrides: Record<string, any> = {}) {
 function makeProgressModel(progress: any) {
   const model: any = {
     findOne: jest.fn().mockReturnValue({ exec: jest.fn().mockResolvedValue(progress) }),
-    find: jest.fn().mockReturnValue({ populate: jest.fn().mockReturnValue({ exec: jest.fn().mockResolvedValue([]) }) }),
+    find: jest
+      .fn()
+      .mockReturnValue({ populate: jest.fn().mockReturnValue({ exec: jest.fn().mockResolvedValue([]) }) }),
     distinct: jest.fn().mockResolvedValue([]),
   };
-  // Support `new this.progressModel(...)` in getOrCreateProgress
   function ProgressModelCtor(data: any) {
     return { ...data, save: jest.fn().mockResolvedValue({ ...data }) };
   }
@@ -35,18 +36,19 @@ function makeProgressModel(progress: any) {
   return ProgressModelCtor;
 }
 
-function makeCardModel() {
+function makeCardModel(cardOwnedByUser: boolean) {
   return {
+    exists: jest.fn().mockResolvedValue(cardOwnedByUser ? { _id: cardId } : null),
     find: jest.fn().mockReturnValue({ exec: jest.fn().mockResolvedValue([]) }),
   };
 }
 
-async function buildService(progress: any) {
+async function buildService(progress: any, cardOwnedByUser = true) {
   const module = await Test.createTestingModule({
     providers: [
       ProgressService,
       { provide: getModelToken(Progress.name), useValue: makeProgressModel(progress) },
-      { provide: getModelToken(Card.name), useValue: makeCardModel() },
+      { provide: getModelToken(Card.name), useValue: makeCardModel(cardOwnedByUser) },
     ],
   }).compile();
   return module.get<ProgressService>(ProgressService);
@@ -54,6 +56,13 @@ async function buildService(progress: any) {
 
 describe('ProgressService - SM-2 algorithm', () => {
   describe('recordReview', () => {
+    it('rejects review when card is not owned by the user', async () => {
+      const progress = makeProgress();
+      const service = await buildService(progress, false);
+
+      await expect(service.recordReview(userId, cardId, 4)).rejects.toThrow();
+    });
+
     it('first successful review (quality=3): interval=1, repetition=1, status=learning', async () => {
       const progress = makeProgress();
       const service = await buildService(progress);

@@ -1,16 +1,9 @@
-import {
-  BadRequestException,
-  Body,
-  Controller,
-  Get,
-  Post,
-  Request,
-  UseGuards,
-} from '@nestjs/common';
+import { Body, Controller, Get, Post, UseGuards } from '@nestjs/common';
 import {
   ApiBadRequestResponse,
   ApiBearerAuth,
   ApiCreatedResponse,
+  ApiNotFoundResponse,
   ApiOkResponse,
   ApiOperation,
   ApiTags,
@@ -18,6 +11,10 @@ import {
 } from '@nestjs/swagger';
 import { ProgressService } from './progress.service';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
+import {
+  AuthenticatedUser,
+  CurrentUser,
+} from '../common/decorators/current-user.decorator';
 import {
   DueCardsResponseDto,
   ProgressResponseDto,
@@ -39,8 +36,8 @@ export class ProgressController {
       'Returns two lists: `due` (reviews whose date has already expired) and `new` (cards the user has never studied).',
   })
   @ApiOkResponse({ type: DueCardsResponseDto })
-  getDue(@Request() req: any) {
-    return this.progressService.getDueCards(req.user.id);
+  getDue(@CurrentUser() user: AuthenticatedUser) {
+    return this.progressService.getDueCards(user.id);
   }
 
   @Post('review')
@@ -51,21 +48,9 @@ export class ProgressController {
       '`quality` must be an integer between 0 and 5.',
   })
   @ApiCreatedResponse({ type: ProgressResponseDto })
-  @ApiBadRequestResponse({ description: 'Missing cardId or quality out of range (0–5).' })
-  recordReview(@Request() req: any, @Body() body: RecordReviewDto) {
-    const { cardId, quality } = body;
-    if (!cardId) {
-      throw new BadRequestException('cardId is required');
-    }
-    if (
-      quality === undefined ||
-      quality === null ||
-      !Number.isInteger(quality) ||
-      quality < 0 ||
-      quality > 5
-    ) {
-      throw new BadRequestException('quality must be an integer between 0 and 5');
-    }
-    return this.progressService.recordReview(req.user.id, cardId, quality);
+  @ApiBadRequestResponse({ description: 'Invalid payload.' })
+  @ApiNotFoundResponse({ description: 'Card not found or not owned by the user.' })
+  recordReview(@CurrentUser() user: AuthenticatedUser, @Body() dto: RecordReviewDto) {
+    return this.progressService.recordReview(user.id, dto.cardId, dto.quality);
   }
 }

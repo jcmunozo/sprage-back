@@ -6,7 +6,6 @@ import {
   Param,
   Patch,
   Post,
-  Request,
   UseGuards,
 } from '@nestjs/common';
 import {
@@ -21,6 +20,10 @@ import {
 } from '@nestjs/swagger';
 import { LanguagesService } from './languages.service';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
+import {
+  AuthenticatedUser,
+  CurrentUser,
+} from '../common/decorators/current-user.decorator';
 import {
   CreateLanguageDto,
   LanguageResponseDto,
@@ -38,16 +41,15 @@ export class LanguagesController {
   @Post()
   @ApiOperation({ summary: 'Create a language for the user' })
   @ApiCreatedResponse({ type: LanguageResponseDto })
-  create(@Request() req: any, @Body() body: CreateLanguageDto) {
-    const { name, code } = body;
-    return this.languagesService.create(req.user.id, name, code);
+  create(@CurrentUser() user: AuthenticatedUser, @Body() dto: CreateLanguageDto) {
+    return this.languagesService.create(user.id, dto);
   }
 
   @Get()
   @ApiOperation({ summary: "List the user's languages" })
   @ApiOkResponse({ type: [LanguageResponseDto] })
-  findAll(@Request() req: any) {
-    return this.languagesService.findAllByUser(req.user.id);
+  findAll(@CurrentUser() user: AuthenticatedUser) {
+    return this.languagesService.findAllByUser(user.id);
   }
 
   @Get(':id')
@@ -55,8 +57,8 @@ export class LanguagesController {
   @ApiParam({ name: 'id', description: 'Language ID (ObjectId)' })
   @ApiOkResponse({ type: LanguageResponseDto })
   @ApiNotFoundResponse({ description: 'Language not found.' })
-  findOne(@Request() req: any, @Param('id') id: string) {
-    return this.languagesService.findOne(id, req.user.id);
+  findOne(@CurrentUser() user: AuthenticatedUser, @Param('id') id: string) {
+    return this.languagesService.findOne(id, user.id);
   }
 
   @Patch(':id')
@@ -64,16 +66,24 @@ export class LanguagesController {
   @ApiParam({ name: 'id', description: 'Language ID (ObjectId)' })
   @ApiOkResponse({ type: LanguageResponseDto })
   @ApiNotFoundResponse({ description: 'Language not found.' })
-  update(@Request() req: any, @Param('id') id: string, @Body() body: UpdateLanguageDto) {
-    return this.languagesService.update(id, req.user.id, body);
+  update(
+    @CurrentUser() user: AuthenticatedUser,
+    @Param('id') id: string,
+    @Body() dto: UpdateLanguageDto,
+  ) {
+    return this.languagesService.update(id, user.id, dto);
   }
 
   @Delete(':id')
-  @ApiOperation({ summary: 'Delete a language' })
+  @ApiOperation({
+    summary: 'Delete a language',
+    description:
+      'Cascades: removes all links pointing to this language and nullifies languageId on cards that reference it.',
+  })
   @ApiParam({ name: 'id', description: 'Language ID (ObjectId)' })
   @ApiOkResponse({ schema: { example: { message: 'Language removed' } } })
   @ApiNotFoundResponse({ description: 'Language not found.' })
-  remove(@Request() req: any, @Param('id') id: string) {
-    return this.languagesService.remove(id, req.user.id);
+  remove(@CurrentUser() user: AuthenticatedUser, @Param('id') id: string) {
+    return this.languagesService.remove(id, user.id);
   }
 }

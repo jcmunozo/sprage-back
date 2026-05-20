@@ -1,6 +1,8 @@
 import { Module } from '@nestjs/common';
+import { APP_GUARD } from '@nestjs/core';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
+import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { DecksModule } from './decks/decks.module';
@@ -21,6 +23,10 @@ import { LanguagesModule } from './languages/languages.module';
       }),
       inject: [ConfigService],
     }),
+    ThrottlerModule.forRoot([
+      { name: 'default', ttl: 60_000, limit: 60 },
+      { name: 'auth', ttl: 60_000, limit: 5 },
+    ]),
     AuthModule,
     UsersModule,
     DecksModule,
@@ -29,5 +35,6 @@ import { LanguagesModule } from './languages/languages.module';
     LinksModule,
     LanguagesModule,
   ],
+  providers: [{ provide: APP_GUARD, useClass: ThrottlerGuard }],
 })
 export class AppModule {}

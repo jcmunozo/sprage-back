@@ -3,16 +3,19 @@ import { ValidationPipe } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import * as basicAuth from 'express-basic-auth';
+import helmet from 'helmet';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const configService = app.get(ConfigService);
 
+  app.use(helmet());
+
   const corsOrigin = configService.get<string>('CORS_ORIGIN') || 'http://localhost:3000';
   app.enableCors({
     origin: corsOrigin.split(',').map((o) => o.trim()),
-    credentials: true,
+    credentials: false,
   });
 
   app.useGlobalPipes(new ValidationPipe({ whitelist: true, transform: true }));
@@ -44,7 +47,7 @@ async function bootstrap() {
         type: 'http',
         scheme: 'bearer',
         bearerFormat: 'JWT',
-        description: 'Paste the access_token returned by /auth/login',
+        description: 'Paste the access_token returned at login',
       },
       'JWT-auth',
     )

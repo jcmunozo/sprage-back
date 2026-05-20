@@ -33,3 +33,6 @@ lerna-debug.log*
 
 #Claude
 CLAUDE.md
+
+# Seed data (may contain user-specific content; should not be tracked)
+unified_data.json

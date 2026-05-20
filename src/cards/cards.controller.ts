@@ -6,11 +6,11 @@ import {
   Param,
   Patch,
   Post,
-  Request,
   UseGuards,
 } from '@nestjs/common';
 import {
   ApiBearerAuth,
+  ApiBadRequestResponse,
   ApiCreatedResponse,
   ApiNotFoundResponse,
   ApiOkResponse,
@@ -21,6 +21,10 @@ import {
 } from '@nestjs/swagger';
 import { CardsService } from './cards.service';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
+import {
+  AuthenticatedUser,
+  CurrentUser,
+} from '../common/decorators/current-user.decorator';
 import {
   CardResponseDto,
   CreateCardDto,
@@ -38,14 +42,11 @@ export class CardsController {
   constructor(private readonly cardsService: CardsService) {}
 
   @Post()
-  @ApiOperation({
-    summary: 'Create a card',
-    description:
-      'The schema accepts extra fields (strict: false); any additional property is persisted.',
-  })
+  @ApiOperation({ summary: 'Create a card' })
   @ApiCreatedResponse({ type: CardResponseDto })
-  create(@Request() req: any, @Body() createCardDto: CreateCardDto) {
-    return this.cardsService.create(req.user.id, createCardDto);
+  @ApiBadRequestResponse({ description: 'Invalid deckId or languageId.' })
+  create(@CurrentUser() user: AuthenticatedUser, @Body() dto: CreateCardDto) {
+    return this.cardsService.create(user.id, dto);
   }
 
   @Post('import')
@@ -55,15 +56,16 @@ export class CardsController {
       'Inserts multiple cards in a single call. Cards with a (front, back) pair already existing for the user are skipped.',
   })
   @ApiCreatedResponse({ type: ImportCardsResponseDto })
-  import(@Request() req: any, @Body() body: ImportCardsDto) {
-    return this.cardsService.importCards(req.user.id, body.cards ?? []);
+  @ApiBadRequestResponse({ description: 'Invalid deckId or languageId in payload.' })
+  import(@CurrentUser() user: AuthenticatedUser, @Body() body: ImportCardsDto) {
+    return this.cardsService.importCards(user.id, body.cards ?? []);
   }
 
   @Get()
   @ApiOperation({ summary: "List the user's cards" })
   @ApiOkResponse({ type: [CardResponseDto] })
-  findAll(@Request() req: any) {
-    return this.cardsService.findAllByUser(req.user.id);
+  findAll(@CurrentUser() user: AuthenticatedUser) {
+    return this.cardsService.findAllByUser(user.id);
   }
 
   @Get(':id')
@@ -71,8 +73,8 @@ export class CardsController {
   @ApiParam({ name: 'id', description: 'Card ID (ObjectId)' })
   @ApiOkResponse({ type: CardResponseDto })
   @ApiNotFoundResponse({ description: 'Card not found.' })
-  findOne(@Request() req: any, @Param('id') id: string) {
-    return this.cardsService.findOne(id, req.user.id);
+  findOne(@CurrentUser() user: AuthenticatedUser, @Param('id') id: string) {
+    return this.cardsService.findOne(id, user.id);
   }
 
   @Patch(':id')
@@ -80,16 +82,21 @@ export class CardsController {
   @ApiParam({ name: 'id', description: 'Card ID (ObjectId)' })
   @ApiOkResponse({ type: CardResponseDto })
   @ApiNotFoundResponse({ description: 'Card not found.' })
-  update(@Request() req: any, @Param('id') id: string, @Body() updateCardDto: UpdateCardDto) {
-    return this.cardsService.update(id, req.user.id, updateCardDto);
+  @ApiBadRequestResponse({ description: 'Invalid deckId or languageId.' })
+  update(
+    @CurrentUser() user: AuthenticatedUser,
+    @Param('id') id: string,
+    @Body() dto: UpdateCardDto,
+  ) {
+    return this.cardsService.update(id, user.id, dto);
   }
 
   @Delete(':id')
-  @ApiOperation({ summary: 'Delete a card' })
+  @ApiOperation({ summary: 'Delete a card (cascades to its progress)' })
   @ApiParam({ name: 'id', description: 'Card ID (ObjectId)' })
   @ApiOkResponse({ schema: { example: { message: 'Card removed' } } })
   @ApiNotFoundResponse({ description: 'Card not found.' })
-  remove(@Request() req: any, @Param('id') id: string) {
-    return this.cardsService.remove(id, req.user.id);
+  remove(@CurrentUser() user: AuthenticatedUser, @Param('id') id: string) {
+    return this.cardsService.remove(id, user.id);
   }
 }

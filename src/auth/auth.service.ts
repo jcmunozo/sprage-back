@@ -1,7 +1,19 @@
-import { Injectable, UnauthorizedException } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
+import { UserDocument } from '../users/schemas/user.schema';
 import { UsersService } from '../users/users.service';
 import * as bcrypt from 'bcrypt';
+
+export interface PublicUser {
+  id: string;
+  email: string;
+  username: string;
+}
+
+export interface AuthResult {
+  access_token: string;
+  user: PublicUser;
+}
 
 @Injectable()
 export class AuthService {
@@ -10,29 +22,28 @@ export class AuthService {
     private jwtService: JwtService,
   ) {}
 
-  async validateUser(email: string, pass: string): Promise<any> {
-    const user = await this.usersService.findByEmail(email);
+  async validateUser(email: string, pass: string): Promise<PublicUser | null> {
+    const user = await this.usersService.findByEmailWithPassword(email);
     if (user && (await bcrypt.compare(pass, user.password))) {
-      const { password, ...result } = user.toObject();
-      return result;
+      return { id: user._id.toString(), email: user.email, username: user.username };
     }
     return null;
   }
 
-  async login(user: any) {
-    const payload = { email: user.email, sub: user._id, username: user.username };
+  login(user: PublicUser): AuthResult {
+    const payload = { sub: user.id };
     return {
       access_token: this.jwtService.sign(payload),
-      user: {
-        id: user._id,
-        email: user.email,
-        username: user.username,
-      },
+      user,
     };
   }
 
-  async register(email: string, pass: string, username: string) {
-    const user = await this.usersService.create(email, pass, username);
-    return this.login(user);
+  async register(email: string, pass: string, username: string): Promise<AuthResult> {
+    const created: UserDocument = await this.usersService.create(email, pass, username);
+    return this.login({
+      id: created._id.toString(),
+      email: created.email,
+      username: created.username,
+    });
   }
 }

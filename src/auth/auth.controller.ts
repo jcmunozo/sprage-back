@@ -1,10 +1,4 @@
-import {
-  BadRequestException,
-  Body,
-  Controller,
-  Post,
-  UnauthorizedException,
-} from '@nestjs/common';
+import { Body, Controller, Post, UnauthorizedException } from '@nestjs/common';
 import {
   ApiBadRequestResponse,
   ApiBody,
@@ -13,34 +7,35 @@ import {
   ApiOkResponse,
   ApiOperation,
   ApiTags,
+  ApiTooManyRequestsResponse,
   ApiUnauthorizedResponse,
 } from '@nestjs/swagger';
+import { Throttle } from '@nestjs/throttler';
 import { AuthService } from './auth.service';
 import { AuthResponseDto, LoginDto, RegisterDto } from './dto/auth.dto';
 
 @ApiTags('Auth')
+@ApiTooManyRequestsResponse({ description: 'Rate limit exceeded.' })
 @Controller('auth')
 export class AuthController {
   constructor(private authService: AuthService) {}
 
   @Post('register')
+  @Throttle({ auth: { limit: 5, ttl: 60_000 } })
   @ApiOperation({
     summary: 'Register a new user',
-    description: 'Creates an account and returns a ready-to-use JWT. The email must be unique.',
+    description: 'Creates an account and returns a ready-to-use JWT.',
   })
   @ApiBody({ type: RegisterDto })
   @ApiCreatedResponse({ type: AuthResponseDto, description: 'User created; access_token issued.' })
-  @ApiBadRequestResponse({ description: 'Missing email, password or username.' })
-  @ApiConflictResponse({ description: 'A user with that email already exists.' })
+  @ApiBadRequestResponse({ description: 'Invalid input.' })
+  @ApiConflictResponse({ description: 'Registration failed.' })
   async register(@Body() body: RegisterDto) {
-    const { email, password, username } = body;
-    if (!email || !password || !username) {
-      throw new BadRequestException('Email, password and username are required');
-    }
-    return this.authService.register(email, password, username);
+    return this.authService.register(body.email, body.password, body.username);
   }
 
   @Post('login')
+  @Throttle({ auth: { limit: 5, ttl: 60_000 } })
   @ApiOperation({
     summary: 'Log in',
     description: 'Validates credentials and returns a JWT with 1-day expiration.',
@@ -49,8 +44,7 @@ export class AuthController {
   @ApiOkResponse({ type: AuthResponseDto, description: 'Valid credentials; access_token issued.' })
   @ApiUnauthorizedResponse({ description: 'Invalid credentials.' })
   async login(@Body() body: LoginDto) {
-    const { email, password } = body;
-    const user = await this.authService.validateUser(email, password);
+    const user = await this.authService.validateUser(body.email, body.password);
     if (!user) {
       throw new UnauthorizedException('Invalid credentials');
     }

@@ -3,13 +3,16 @@ import { Document, Schema as MongooseSchema } from 'mongoose';
 
 export type CardDocument = Card & Document;
 
-@Schema({ timestamps: true, strict: false })
+@Schema({ timestamps: true })
 export class Card {
-  @Prop({ type: MongooseSchema.Types.ObjectId, ref: 'User', required: true })
+  @Prop({ type: MongooseSchema.Types.ObjectId, ref: 'User', required: true, index: true })
   userId: MongooseSchema.Types.ObjectId;
 
-  @Prop({ type: MongooseSchema.Types.ObjectId, ref: 'Deck' })
-  deckId: MongooseSchema.Types.ObjectId;
+  @Prop({ type: MongooseSchema.Types.ObjectId, ref: 'Deck', default: null })
+  deckId: MongooseSchema.Types.ObjectId | null;
+
+  @Prop({ type: MongooseSchema.Types.ObjectId, ref: 'Language', default: null })
+  languageId: MongooseSchema.Types.ObjectId | null;
 
   @Prop({ required: true })
   front: string;
@@ -21,7 +24,7 @@ export class Card {
   type: string;
 
   @Prop()
-  language: string;
+  category: string;
 
   @Prop([String])
   tags: string[];
@@ -30,7 +33,10 @@ export class Card {
   example: string;
 
   @Prop()
-  category: string;
+  difficulty: string;
+
+  @Prop({ index: true })
+  externalId: string;
 }
 
 export const CardSchema = SchemaFactory.createForClass(Card);

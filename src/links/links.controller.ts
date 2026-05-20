@@ -7,10 +7,10 @@ import {
   Patch,
   Post,
   Query,
-  Request,
   UseGuards,
 } from '@nestjs/common';
 import {
+  ApiBadRequestResponse,
   ApiBearerAuth,
   ApiCreatedResponse,
   ApiNotFoundResponse,
@@ -23,6 +23,10 @@ import {
 } from '@nestjs/swagger';
 import { LinksService } from './links.service';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
+import {
+  AuthenticatedUser,
+  CurrentUser,
+} from '../common/decorators/current-user.decorator';
 import { CreateLinkDto, LinkResponseDto, UpdateLinkDto } from './dto/link.dto';
 
 @ApiTags('Links')
@@ -36,8 +40,9 @@ export class LinksController {
   @Post()
   @ApiOperation({ summary: 'Create a link associated with a language' })
   @ApiCreatedResponse({ type: LinkResponseDto })
-  create(@Request() req: any, @Body() createLinkDto: CreateLinkDto) {
-    return this.linksService.create(req.user.id, createLinkDto);
+  @ApiBadRequestResponse({ description: 'Invalid languageId.' })
+  create(@CurrentUser() user: AuthenticatedUser, @Body() dto: CreateLinkDto) {
+    return this.linksService.create(user.id, dto);
   }
 
   @Get()
@@ -47,11 +52,11 @@ export class LinksController {
   })
   @ApiQuery({ name: 'languageId', required: false, description: 'Filter by language (ObjectId)' })
   @ApiOkResponse({ type: [LinkResponseDto] })
-  findAll(@Request() req: any, @Query('languageId') languageId?: string) {
+  findAll(@CurrentUser() user: AuthenticatedUser, @Query('languageId') languageId?: string) {
     if (languageId) {
-      return this.linksService.findByLanguage(req.user.id, languageId);
+      return this.linksService.findByLanguage(user.id, languageId);
     }
-    return this.linksService.findAllByUser(req.user.id);
+    return this.linksService.findAllByUser(user.id);
   }
 
   @Patch(':id')
@@ -59,8 +64,12 @@ export class LinksController {
   @ApiParam({ name: 'id', description: 'Link ID (ObjectId)' })
   @ApiOkResponse({ type: LinkResponseDto })
   @ApiNotFoundResponse({ description: 'Link not found.' })
-  update(@Request() req: any, @Param('id') id: string, @Body() updateLinkDto: UpdateLinkDto) {
-    return this.linksService.update(id, req.user.id, updateLinkDto);
+  update(
+    @CurrentUser() user: AuthenticatedUser,
+    @Param('id') id: string,
+    @Body() dto: UpdateLinkDto,
+  ) {
+    return this.linksService.update(id, user.id, dto);
   }
 
   @Delete(':id')
@@ -68,7 +77,7 @@ export class LinksController {
   @ApiParam({ name: 'id', description: 'Link ID (ObjectId)' })
   @ApiOkResponse({ schema: { example: { message: 'Link removed' } } })
   @ApiNotFoundResponse({ description: 'Link not found.' })
-  remove(@Request() req: any, @Param('id') id: string) {
-    return this.linksService.remove(id, req.user.id);
+  remove(@CurrentUser() user: AuthenticatedUser, @Param('id') id: string) {
+    return this.linksService.remove(id, user.id);
   }
 }

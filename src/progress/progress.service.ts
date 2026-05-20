@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model, Types } from 'mongoose';
 import { Progress, ProgressDocument } from './schemas/progress.schema';
@@ -11,16 +11,33 @@ export class ProgressService {
     @InjectModel(Card.name) private cardModel: Model<CardDocument>,
   ) {}
 
-  async getOrCreateProgress(userId: string, cardId: string): Promise<ProgressDocument> {
-    let progress = await this.progressModel.findOne({
-      userId: new Types.ObjectId(userId),
-      cardId: new Types.ObjectId(cardId),
-    }).exec();
+  private async assertCardOwnership(
+    userId: Types.ObjectId,
+    cardId: Types.ObjectId,
+  ): Promise<void> {
+    const exists = await this.cardModel.exists({ _id: cardId, userId });
+    if (!exists) {
+      throw new NotFoundException(`Card with ID ${cardId.toString()} not found`);
+    }
+  }
+
+  async getOrCreateProgress(
+    userId: string,
+    cardId: string,
+  ): Promise<ProgressDocument> {
+    const userObjectId = new Types.ObjectId(userId);
+    const cardObjectId = new Types.ObjectId(cardId);
+
+    await this.assertCardOwnership(userObjectId, cardObjectId);
+
+    let progress = await this.progressModel
+      .findOne({ userId: userObjectId, cardId: cardObjectId })
+      .exec();
 
     if (!progress) {
       progress = new this.progressModel({
-        userId: new Types.ObjectId(userId),
-        cardId: new Types.ObjectId(cardId),
+        userId: userObjectId,
+        cardId: cardObjectId,
       });
       await progress.save();
     }
@@ -28,10 +45,13 @@ export class ProgressService {
     return progress;
   }
 
-  async recordReview(userId: string, cardId: string, quality: number): Promise<ProgressDocument> {
+  async recordReview(
+    userId: string,
+    cardId: string,
+    quality: number,
+  ): Promise<ProgressDocument> {
     const progress = await this.getOrCreateProgress(userId, cardId);
 
-    // SM-2 Algorithm
     let { repetition, easeFactor, interval } = progress;
 
     if (quality >= 3) {
@@ -70,20 +90,26 @@ export class ProgressService {
     return progress.save();
   }
 
-  async getDueCards(userId: string): Promise<{ due: ProgressDocument[]; new: CardDocument[] }> {
+  async getDueCards(
+    userId: string,
+  ): Promise<{ due: ProgressDocument[]; new: CardDocument[] }> {
     const userObjectId = new Types.ObjectId(userId);
 
     const dueProgress = await this.progressModel
       .find({ userId: userObjectId, nextReviewDate: { $lte: new Date() } })
-      .populate('cardId')
+      .populate({ path: 'cardId', match: { userId: userObjectId } })
       .exec();
 
-    const startedCardIds = await this.progressModel.distinct('cardId', { userId: userObjectId });
+    const due = dueProgress.filter((p) => p.cardId);
+
+    const startedCardIds = await this.progressModel.distinct('cardId', {
+      userId: userObjectId,
+    });
 
     const newCards = await this.cardModel
       .find({ userId: userObjectId, _id: { $nin: startedCardIds } })
       .exec();
 
-    return { due: dueProgress, new: newCards };
+    return { due, new: newCards };
   }
 }
