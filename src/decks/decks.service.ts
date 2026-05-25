@@ -3,10 +3,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model, Types } from 'mongoose';
 import { Deck, DeckDocument } from './schemas/deck.schema';
 import { Card, CardDocument } from '../cards/schemas/card.schema';
-import {
-  Progress,
-  ProgressDocument,
-} from '../progress/schemas/progress.schema';
+import { Progress, ProgressDocument } from '../progress/schemas/progress.schema';
 import { CreateDeckDto, UpdateDeckDto } from './dto/deck.dto';
 
 @Injectable()
@@ -41,11 +38,10 @@ export class DecksService {
 
   async update(id: string, userId: string, dto: UpdateDeckDto): Promise<Deck> {
     const updated = await this.deckModel
-      .findOneAndUpdate(
-        { _id: new Types.ObjectId(id), userId: new Types.ObjectId(userId) },
-        dto,
-        { new: true, runValidators: true },
-      )
+      .findOneAndUpdate({ _id: new Types.ObjectId(id), userId: new Types.ObjectId(userId) }, dto, {
+        new: true,
+        runValidators: true,
+      })
       .exec();
     if (!updated) {
       throw new NotFoundException(`Deck with ID ${id} not found`);

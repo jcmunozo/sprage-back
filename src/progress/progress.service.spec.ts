@@ -24,9 +24,9 @@ function makeProgress(overrides: Record<string, any> = {}) {
 function makeProgressModel(progress: any) {
   const model: any = {
     findOne: jest.fn().mockReturnValue({ exec: jest.fn().mockResolvedValue(progress) }),
-    find: jest
-      .fn()
-      .mockReturnValue({ populate: jest.fn().mockReturnValue({ exec: jest.fn().mockResolvedValue([]) }) }),
+    find: jest.fn().mockReturnValue({
+      populate: jest.fn().mockReturnValue({ exec: jest.fn().mockResolvedValue([]) }),
+    }),
     distinct: jest.fn().mockResolvedValue([]),
   };
   function ProgressModelCtor(data: any) {

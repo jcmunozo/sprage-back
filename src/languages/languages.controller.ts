@@ -1,13 +1,4 @@
-import {
-  Body,
-  Controller,
-  Delete,
-  Get,
-  Param,
-  Patch,
-  Post,
-  UseGuards,
-} from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch, Post, UseGuards } from '@nestjs/common';
 import {
   ApiBearerAuth,
   ApiCreatedResponse,
@@ -20,15 +11,8 @@ import {
 } from '@nestjs/swagger';
 import { LanguagesService } from './languages.service';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
-import {
-  AuthenticatedUser,
-  CurrentUser,
-} from '../common/decorators/current-user.decorator';
-import {
-  CreateLanguageDto,
-  LanguageResponseDto,
-  UpdateLanguageDto,
-} from './dto/language.dto';
+import { AuthenticatedUser, CurrentUser } from '../common/decorators/current-user.decorator';
+import { CreateLanguageDto, LanguageResponseDto, UpdateLanguageDto } from './dto/language.dto';
 
 @ApiTags('Languages')
 @ApiBearerAuth('JWT-auth')

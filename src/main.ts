@@ -1,5 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { ValidationPipe } from '@nestjs/common';
+import { NestExpressApplication } from '@nestjs/platform-express';
 import { ConfigService } from '@nestjs/config';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import * as basicAuth from 'express-basic-auth';
@@ -7,8 +8,13 @@ import helmet from 'helmet';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create<NestExpressApplication>(AppModule);
   const configService = app.get(ConfigService);
+
+  // Trust the platform's reverse proxy (Render/Railway/Fly/etc.) so that
+  // req.ip reflects the real client IP. Without this, the rate limiter keys
+  // every request to the proxy's IP and all users share one bucket.
+  app.set('trust proxy', 1);
 
   app.use(helmet());
 
@@ -51,7 +57,6 @@ async function bootstrap() {
       },
       'JWT-auth',
     )
-    .addTag('Auth', 'Registration and login')
     .addTag('Decks', "User's card decks")
     .addTag('Cards', 'Study cards')
     .addTag('Progress', 'SM-2 reviews and scheduling')

@@ -31,7 +31,10 @@ export class UsersService {
   }
 
   async findByEmailWithPassword(email: string): Promise<UserDocument | null> {
-    return this.userModel.findOne({ email: normalizeEmail(email) }).select('+password').exec();
+    return this.userModel
+      .findOne({ email: normalizeEmail(email) })
+      .select('+password')
+      .exec();
   }
 
   async findById(id: string): Promise<UserDocument | null> {

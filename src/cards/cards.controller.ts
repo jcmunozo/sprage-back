@@ -6,6 +6,7 @@ import {
   Param,
   Patch,
   Post,
+  Query,
   UseGuards,
 } from '@nestjs/common';
 import {
@@ -16,15 +17,13 @@ import {
   ApiOkResponse,
   ApiOperation,
   ApiParam,
+  ApiQuery,
   ApiTags,
   ApiUnauthorizedResponse,
 } from '@nestjs/swagger';
 import { CardsService } from './cards.service';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
-import {
-  AuthenticatedUser,
-  CurrentUser,
-} from '../common/decorators/current-user.decorator';
+import { AuthenticatedUser, CurrentUser } from '../common/decorators/current-user.decorator';
 import {
   CardResponseDto,
   CreateCardDto,
@@ -62,10 +61,19 @@ export class CardsController {
   }
 
   @Get()
-  @ApiOperation({ summary: "List the user's cards" })
+  @ApiOperation({
+    summary: "List the user's cards",
+    description:
+      "Returns all of the user's cards. Pass `q` to filter by a case-insensitive substring matched against front and back.",
+  })
+  @ApiQuery({
+    name: 'q',
+    required: false,
+    description: 'Text to search within front/back (case-insensitive substring).',
+  })
   @ApiOkResponse({ type: [CardResponseDto] })
-  findAll(@CurrentUser() user: AuthenticatedUser) {
-    return this.cardsService.findAllByUser(user.id);
+  findAll(@CurrentUser() user: AuthenticatedUser, @Query('q') q?: string) {
+    return this.cardsService.findAllByUser(user.id, q);
   }
 
   @Get(':id')

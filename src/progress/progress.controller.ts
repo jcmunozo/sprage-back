@@ -11,15 +11,8 @@ import {
 } from '@nestjs/swagger';
 import { ProgressService } from './progress.service';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
-import {
-  AuthenticatedUser,
-  CurrentUser,
-} from '../common/decorators/current-user.decorator';
-import {
-  DueCardsResponseDto,
-  ProgressResponseDto,
-  RecordReviewDto,
-} from './dto/progress.dto';
+import { AuthenticatedUser, CurrentUser } from '../common/decorators/current-user.decorator';
+import { DueCardsResponseDto, ProgressResponseDto, RecordReviewDto } from './dto/progress.dto';
 
 @ApiTags('Progress')
 @ApiBearerAuth('JWT-auth')

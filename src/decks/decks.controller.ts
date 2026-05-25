@@ -1,13 +1,4 @@
-import {
-  Body,
-  Controller,
-  Delete,
-  Get,
-  Param,
-  Patch,
-  Post,
-  UseGuards,
-} from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch, Post, UseGuards } from '@nestjs/common';
 import {
   ApiBearerAuth,
   ApiCreatedResponse,
@@ -20,10 +11,7 @@ import {
 } from '@nestjs/swagger';
 import { DecksService } from './decks.service';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
-import {
-  AuthenticatedUser,
-  CurrentUser,
-} from '../common/decorators/current-user.decorator';
+import { AuthenticatedUser, CurrentUser } from '../common/decorators/current-user.decorator';
 import { CreateDeckDto, DeckResponseDto, UpdateDeckDto } from './dto/deck.dto';
 
 @ApiTags('Decks')

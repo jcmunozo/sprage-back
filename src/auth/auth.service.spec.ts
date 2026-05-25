@@ -1,4 +1,5 @@
 import { Test } from '@nestjs/testing';
+import { ConfigService } from '@nestjs/config';
 import { JwtService } from '@nestjs/jwt';
 import { Types } from 'mongoose';
 import * as bcrypt from 'bcrypt';
@@ -6,6 +7,7 @@ import { AuthService } from './auth.service';
 import { UsersService } from '../users/users.service';
 
 const userId = new Types.ObjectId();
+const VALID_CODE = 'secret-invite-code';
 
 function makeMockUser(overrides: Record<string, any> = {}) {
   return {
@@ -23,6 +25,9 @@ describe('AuthService', () => {
     Pick<UsersService, 'findByEmailWithPassword' | 'create' | 'findById'>
   >;
   let jwtService: jest.Mocked<Pick<JwtService, 'sign'>>;
+  // The REGISTRATION_CODE value returned by the mocked ConfigService; tests
+  // tweak it to simulate "enabled", "disabled" (undefined), etc.
+  let registrationCode: string | undefined;
 
   beforeEach(async () => {
     usersService = {
@@ -31,12 +36,17 @@ describe('AuthService', () => {
       findById: jest.fn(),
     };
     jwtService = { sign: jest.fn().mockReturnValue('mock-jwt-token') };
+    registrationCode = VALID_CODE;
+    const configService = {
+      get: jest.fn((key: string) => (key === 'REGISTRATION_CODE' ? registrationCode : undefined)),
+    };
 
     const module = await Test.createTestingModule({
       providers: [
         AuthService,
         { provide: UsersService, useValue: usersService },
         { provide: JwtService, useValue: jwtService },
+        { provide: ConfigService, useValue: configService },
       ],
     }).compile();
 
@@ -75,6 +85,18 @@ describe('AuthService', () => {
 
       expect(result).toBeNull();
     });
+
+    it('still runs bcrypt.compare when the user does not exist (timing equalized)', async () => {
+      usersService.findByEmailWithPassword.mockResolvedValue(null);
+      const compareSpy = jest.spyOn(bcrypt, 'compare').mockResolvedValue(false as never);
+
+      const result = await service.validateUser('notfound@example.com', 'any');
+
+      expect(result).toBeNull();
+      // A dummy comparison keeps response time constant whether or not the
+      // email exists, preventing user enumeration via timing.
+      expect(compareSpy).toHaveBeenCalledTimes(1);
+    });
   });
 
   describe('login', () => {
@@ -97,10 +119,15 @@ describe('AuthService', () => {
   });
 
   describe('register', () => {
-    it('creates a user and returns login result', async () => {
+    it('creates a user and returns login result when the code is valid', async () => {
       usersService.create.mockResolvedValue(makeMockUser() as any);
 
-      const result = await service.register('test@example.com', 'password123', 'testuser');
+      const result = await service.register(
+        'test@example.com',
+        'password123',
+        'testuser',
+        VALID_CODE,
+      );
 
       expect(usersService.create).toHaveBeenCalledWith(
         'test@example.com',
@@ -109,6 +136,24 @@ describe('AuthService', () => {
       );
       expect(result).toHaveProperty('access_token');
       expect(result.user.email).toBe('test@example.com');
+    });
+
+    it('rejects and does not create a user when the code is wrong', async () => {
+      await expect(
+        service.register('test@example.com', 'password123', 'testuser', 'wrong-code'),
+      ).rejects.toThrow();
+
+      expect(usersService.create).not.toHaveBeenCalled();
+    });
+
+    it('rejects when registration is disabled (REGISTRATION_CODE unset)', async () => {
+      registrationCode = undefined;
+
+      await expect(
+        service.register('test@example.com', 'password123', 'testuser', VALID_CODE),
+      ).rejects.toThrow();
+
+      expect(usersService.create).not.toHaveBeenCalled();
     });
   });
 });

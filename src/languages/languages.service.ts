@@ -38,11 +38,10 @@ export class LanguagesService {
 
   async update(id: string, userId: string, dto: UpdateLanguageDto): Promise<Language> {
     const updated = await this.languageModel
-      .findOneAndUpdate(
-        { _id: new Types.ObjectId(id), userId: new Types.ObjectId(userId) },
-        dto,
-        { new: true, runValidators: true },
-      )
+      .findOneAndUpdate({ _id: new Types.ObjectId(id), userId: new Types.ObjectId(userId) }, dto, {
+        new: true,
+        runValidators: true,
+      })
       .exec();
     if (!updated) {
       throw new NotFoundException(`Language with ID ${id} not found`);
@@ -61,9 +60,7 @@ export class LanguagesService {
       throw new NotFoundException(`Language with ID ${id} not found`);
     }
 
-    await this.linkModel
-      .deleteMany({ userId: userObjectId, languageId: languageObjectId })
-      .exec();
+    await this.linkModel.deleteMany({ userId: userObjectId, languageId: languageObjectId }).exec();
     await this.cardModel
       .updateMany(
         { userId: userObjectId, languageId: languageObjectId },

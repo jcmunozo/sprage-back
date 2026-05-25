@@ -22,6 +22,12 @@ export class RegisterDto {
   @IsNotEmpty()
   @MaxLength(64)
   username: string;
+
+  @ApiProperty({ description: 'Invitation code required to register (matches REGISTRATION_CODE)' })
+  @IsString()
+  @IsNotEmpty()
+  @MaxLength(256)
+  registrationCode: string;
 }
 
 export class LoginDto {
@@ -33,26 +39,4 @@ export class LoginDto {
   @IsString()
   @IsNotEmpty()
   password: string;
-}
-
-export class AuthUserDto {
-  @ApiProperty({ example: '6650f1c8e2a1b4d3f1234567' })
-  id: string;
-
-  @ApiProperty({ example: 'jane@example.com' })
-  email: string;
-
-  @ApiProperty({ example: 'jane' })
-  username: string;
-}
-
-export class AuthResponseDto {
-  @ApiProperty({
-    example: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...',
-    description: 'JWT with 1-day expiration. Use as a Bearer token.',
-  })
-  access_token: string;
-
-  @ApiProperty({ type: AuthUserDto })
-  user: AuthUserDto;
 }

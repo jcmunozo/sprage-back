@@ -23,10 +23,7 @@ import {
 } from '@nestjs/swagger';
 import { LinksService } from './links.service';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
-import {
-  AuthenticatedUser,
-  CurrentUser,
-} from '../common/decorators/current-user.decorator';
+import { AuthenticatedUser, CurrentUser } from '../common/decorators/current-user.decorator';
 import { CreateLinkDto, LinkResponseDto, UpdateLinkDto } from './dto/link.dto';
 
 @ApiTags('Links')
