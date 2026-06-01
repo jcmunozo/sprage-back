@@ -3,28 +3,6 @@
     "type": "idiom",
     "language": "English",
     "category": "expressions",
-    "front": "Dot the I's and cross the T's",
-    "back": "To be meticulous; to pay careful attention to every detail",
-    "example": "Before submitting the contract, make sure you dot the I's and cross the T's.",
-    "tags": ["formality", "precision"],
-    "difficulty": "intermediate",
-    "id": 2
-  },
-  {
-    "type": "idiom",
-    "language": "English",
-    "category": "expressions",
-    "front": "Face the music",
-    "back": "To accept the consequences of one's actions",
-    "example": "He made a mistake at work and had to face the music.",
-    "tags": ["responsibility"],
-    "difficulty": "intermediate",
-    "id": 3
-  },
-  {
-    "type": "idiom",
-    "language": "English",
-    "category": "expressions",
     "front": "Underwater",
     "back": "In a difficult or overwhelming situation, often financially",
     "example": "After losing his job, he felt totally underwater with his debt.",
@@ -108,17 +86,6 @@
     "tags": ["prepositions", "verbs"],
     "difficulty": "beginner",
     "id": 14
-  },
-  {
-    "type": "grammar",
-    "language": "English",
-    "category": "connectors",
-    "front": "Not only ... but also",
-    "back": "Used to add emphasis by connecting two related positive ideas",
-    "example": "She is not only smart but also incredibly hardworking.",
-    "tags": ["connectors", "emphasis"],
-    "difficulty": "intermediate",
-    "id": 15
   },
   {
     "type": "grammar",
