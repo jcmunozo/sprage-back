@@ -1,27 +1,5 @@
 [
   {
-    "type": "idiom",
-    "language": "English",
-    "category": "expressions",
-    "front": "Acid test",
-    "back": "A decisive test that proves the effectiveness or quality of something",
-    "example": "The presentation was the acid test of his leadership skills.",
-    "tags": ["evaluation"],
-    "difficulty": "intermediate",
-    "id": 13
-  },
-  {
-    "type": "grammar",
-    "language": "English",
-    "category": "prepositions",
-    "front": "For + -ing",
-    "back": "Used to express the purpose of an object or action",
-    "example": "This tool is for cutting wood.",
-    "tags": ["prepositions", "verbs"],
-    "difficulty": "beginner",
-    "id": 14
-  },
-  {
     "type": "grammar",
     "language": "English",
     "category": "expressions",
