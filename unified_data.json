@@ -1,37 +1,4 @@
 [
-  {
-    "type": "grammar",
-    "language": "English",
-    "category": "expressions",
-    "front": "I hope to",
-    "back": "Expresses a wish or positive expectation about a future action",
-    "example": "I hope to visit Japan someday.",
-    "tags": ["future", "wishes"],
-    "difficulty": "beginner",
-    "id": 17
-  },
-  {
-    "type": "grammar",
-    "language": "English",
-    "category": "connectors",
-    "front": "In doing so",
-    "back": "By performing the action just mentioned; as a result of doing that",
-    "example": "She worked extra hours, and in doing so, she completed the project ahead of schedule.",
-    "tags": ["connectors", "consequence"],
-    "difficulty": "intermediate",
-    "id": 18
-  },
-  {
-    "type": "idiom",
-    "language": "English",
-    "category": "expressions",
-    "front": "Bury the hatchet",
-    "back": "To end a conflict and make peace with someone",
-    "example": "After years of disagreement, they finally buried the hatchet.",
-    "tags": ["conflict", "relationships"],
-    "difficulty": "intermediate",
-    "id": 19
-  },
    {
     "type": "vocabulary",
     "language": "Mixed",
