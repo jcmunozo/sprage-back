@@ -3,17 +3,6 @@
     "type": "grammar",
     "language": "English",
     "category": "expressions",
-    "front": "I am amazed at how",
-    "back": "Used to express surprise or admiration about the degree or extent of something",
-    "example": "I am amazed at how quickly you learned this.",
-    "tags": ["admiration", "expressions"],
-    "difficulty": "intermediate",
-    "id": 16
-  },
-  {
-    "type": "grammar",
-    "language": "English",
-    "category": "expressions",
     "front": "I hope to",
     "back": "Expresses a wish or positive expectation about a future action",
     "example": "I hope to visit Japan someday.",
@@ -43,29 +32,7 @@
     "difficulty": "intermediate",
     "id": 19
   },
-  {
-    "type": "vocabulary",
-    "language": "Mixed",
-    "category": "phrases",
-    "front": "in favor of",
-    "back": "a favor de",
-    "example": "She voted in favor of the new policy.",
-    "tags": ["support"],
-    "difficulty": "beginner",
-    "id": 20
-  },
-  {
-    "type": "vocabulary",
-    "language": "Mixed",
-    "category": "adverbs",
-    "front": "tirelessly",
-    "back": "incansablemente",
-    "example": "She worked tirelessly to finish the project.",
-    "tags": ["work"],
-    "difficulty": "intermediate",
-    "id": 21
-  },
-  {
+   {
     "type": "vocabulary",
     "language": "Mixed",
     "category": "adverbs",
