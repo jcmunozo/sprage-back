@@ -2,17 +2,6 @@
   {
     "type": "vocabulary",
     "language": "Mixed",
-    "category": "expressions",
-    "front": "in the know",
-    "back": "al tanto; enterado de algo",
-    "example": "Only a few people were in the know about the merger.",
-    "tags": ["information"],
-    "difficulty": "intermediate",
-    "id": 26
-  },
-  {
-    "type": "vocabulary",
-    "language": "Mixed",
     "category": "phrasal verbs",
     "front": "cutting down",
     "back": "reducir; disminuir",
