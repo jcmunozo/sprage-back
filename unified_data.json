@@ -2,39 +2,6 @@
   {
     "type": "vocabulary",
     "language": "Mixed",
-    "category": "phrases",
-    "front": "in a hasty manner",
-    "back": "de manera apresurada",
-    "example": "The decision was made in a hasty manner and cost them dearly.",
-    "tags": ["behavior"],
-    "difficulty": "intermediate",
-    "id": 23
-  },
-  {
-    "type": "vocabulary",
-    "language": "Mixed",
-    "category": "phrasal verbs",
-    "front": "carry out",
-    "back": "llevar a cabo; ejecutar",
-    "example": "The team carried out the plan without any issues.",
-    "tags": ["action"],
-    "difficulty": "beginner",
-    "id": 24
-  },
-  {
-    "type": "vocabulary",
-    "language": "Mixed",
-    "category": "adverbs",
-    "front": "properly",
-    "back": "correctamente; como se debe",
-    "example": "Make sure the equipment is properly installed before use.",
-    "tags": ["manner"],
-    "difficulty": "beginner",
-    "id": 25
-  },
-  {
-    "type": "vocabulary",
-    "language": "Mixed",
     "category": "expressions",
     "front": "in the know",
     "back": "al tanto; enterado de algo",
