@@ -2,28 +2,6 @@
   {
     "type": "vocabulary",
     "language": "Mixed",
-    "category": "questions",
-    "front": "how long",
-    "back": "cuánto tiempo",
-    "example": "How long have you been living here?",
-    "tags": ["questions", "time"],
-    "difficulty": "beginner",
-    "id": 28
-  },
-  {
-    "type": "vocabulary",
-    "language": "Mixed",
-    "category": "phrases",
-    "front": "how it does it is not a concern",
-    "back": "cómo lo hace, no es una preocupación",
-    "example": "The system works — how it does it is not a concern right now.",
-    "tags": ["pragmatics"],
-    "difficulty": "intermediate",
-    "id": 29
-  },
-  {
-    "type": "vocabulary",
-    "language": "Mixed",
     "category": "phrases",
     "front": "but you have to sit absolutely still",
     "back": "pero tienes que sentarte absolutamente quieto",
