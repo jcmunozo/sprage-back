@@ -2,17 +2,6 @@
   {
     "type": "vocabulary",
     "language": "Mixed",
-    "category": "phrasal verbs",
-    "front": "cutting down",
-    "back": "reducir; disminuir",
-    "example": "She is cutting down on sugar for health reasons.",
-    "tags": ["reduction"],
-    "difficulty": "beginner",
-    "id": 27
-  },
-  {
-    "type": "vocabulary",
-    "language": "Mixed",
     "category": "questions",
     "front": "how long",
     "back": "cuánto tiempo",
@@ -110,28 +99,6 @@
     "id": 36
   },
   {
-    "type": "grammar",
-    "language": "Mixed",
-    "category": "tenses",
-    "front": "past + would",
-    "back": "Expresses past habits or repeated actions (equivalent to 'solía' in Spanish)",
-    "example": "When I was young, I would walk to school every day.",
-    "tags": ["past", "habits"],
-    "difficulty": "intermediate",
-    "id": 38
-  },
-  {
-    "type": "grammar",
-    "language": "Mixed",
-    "category": "tenses",
-    "front": "If needed, Alex would allocate additional resources",
-    "back": "Example of 'would' for a past habitual or conditional action: Si fuera necesario, Alex asignaría recursos adicionales",
-    "example": "In the past, if needed, Alex would allocate additional resources without hesitation.",
-    "tags": ["past", "conditional", "habits"],
-    "difficulty": "intermediate",
-    "id": 39
-  },
-  {
     "type": "vocabulary",
     "language": "English",
     "category": "expressions",
@@ -141,17 +108,6 @@
     "tags": ["personality", "informal"],
     "difficulty": "advanced",
     "id": 40
-  },
-  {
-    "type": "idiom",
-    "language": "English",
-    "category": "expressions",
-    "front": "Works like a charm",
-    "back": "Works perfectly; produces the desired result",
-    "example": "I added a drop of oil to the hinge and it works like a charm now.",
-    "tags": ["effectiveness"],
-    "difficulty": "beginner",
-    "id": 41
   },
   {
     "type": "vocabulary",
