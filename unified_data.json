@@ -3,28 +3,6 @@
     "type": "vocabulary",
     "language": "Mixed",
     "category": "phrases",
-    "front": "but you have to sit absolutely still",
-    "back": "pero tienes que sentarte absolutamente quieto",
-    "example": "The doctor said: don't move at all — you have to sit absolutely still.",
-    "tags": ["instructions"],
-    "difficulty": "beginner",
-    "id": 30
-  },
-  {
-    "type": "vocabulary",
-    "language": "Mixed",
-    "category": "expressions",
-    "front": "I'm telling you",
-    "back": "te lo digo; te lo juro (informal, para enfatizar)",
-    "example": "I'm telling you, that movie is amazing.",
-    "tags": ["informal", "emphasis"],
-    "difficulty": "beginner",
-    "id": 31
-  },
-  {
-    "type": "vocabulary",
-    "language": "Mixed",
-    "category": "phrases",
     "front": "far before",
     "back": "mucho antes",
     "example": "This was decided far before the meeting even started.",
