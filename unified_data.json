@@ -2,39 +2,6 @@
   {
     "type": "vocabulary",
     "language": "Mixed",
-    "category": "phrases",
-    "front": "far before",
-    "back": "mucho antes",
-    "example": "This was decided far before the meeting even started.",
-    "tags": ["time"],
-    "difficulty": "beginner",
-    "id": 32
-  },
-  {
-    "type": "vocabulary",
-    "language": "Mixed",
-    "category": "phrases",
-    "front": "even I would rather be watching",
-    "back": "incluso yo preferiría estar viendo...",
-    "example": "This lecture is so boring — even I would rather be watching paint dry.",
-    "tags": ["preference"],
-    "difficulty": "intermediate",
-    "id": 33
-  },
-  {
-    "type": "vocabulary",
-    "language": "Mixed",
-    "category": "expressions",
-    "front": "nowhere near that",
-    "back": "ni de cerca; muy lejos de eso",
-    "example": "He thought he was ready, but he was nowhere near that.",
-    "tags": ["comparison"],
-    "difficulty": "intermediate",
-    "id": 34
-  },
-  {
-    "type": "vocabulary",
-    "language": "Mixed",
     "category": "questions",
     "front": "when do we get to see the sun",
     "back": "¿cuándo podremos ver el sol?",
@@ -746,17 +713,6 @@
     "tags": ["connectors", "emphasis"],
     "difficulty": "intermediate",
     "id": 117
-  },
-  {
-    "type": "grammar",
-    "language": "English",
-    "category": "wishes",
-    "front": "Wish",
-    "back": "Used to express a desire for something that is impossible or unlikely in the present",
-    "example": "I wish I were rich.",
-    "tags": ["wishes", "subjunctive"],
-    "difficulty": "intermediate",
-    "id": 118
   },
   {
     "type": "vocabulary",
