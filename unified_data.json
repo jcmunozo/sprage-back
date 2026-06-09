@@ -12,17 +12,6 @@
   },
   {
     "type": "vocabulary",
-    "language": "Mixed",
-    "category": "expressions",
-    "front": "by default",
-    "back": "por defecto; automáticamente",
-    "example": "Since no one else volunteered, she became the leader by default.",
-    "tags": ["logic"],
-    "difficulty": "intermediate",
-    "id": 36
-  },
-  {
-    "type": "vocabulary",
     "language": "English",
     "category": "expressions",
     "front": "yellow-bellied",
