@@ -211,17 +211,6 @@
   {
     "type": "vocabulary",
     "language": "English",
-    "category": "exclamations",
-    "front": "Damn",
-    "back": "An exclamation expressing frustration, surprise, or disappointment (informal)",
-    "example": "Damn! I forgot my keys again.",
-    "tags": ["informal", "exclamations"],
-    "difficulty": "beginner",
-    "id": 64
-  },
-  {
-    "type": "vocabulary",
-    "language": "English",
     "category": "phrasal verbs",
     "front": "Put it down",
     "back": "Place something on a surface; stop holding it",
