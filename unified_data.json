@@ -2,61 +2,6 @@
   {
     "type": "vocabulary",
     "language": "Mixed",
-    "category": "questions",
-    "front": "when do we get to see the sun",
-    "back": "¿cuándo podremos ver el sol?",
-    "example": "It's been raining all week — when do we get to see the sun?",
-    "tags": ["questions"],
-    "difficulty": "beginner",
-    "id": 35
-  },
-  {
-    "type": "vocabulary",
-    "language": "English",
-    "category": "expressions",
-    "front": "yellow-bellied",
-    "back": "Cowardly; lacking courage (informal)",
-    "example": "Don't be yellow-bellied — just ask her out!",
-    "tags": ["personality", "informal"],
-    "difficulty": "advanced",
-    "id": 40
-  },
-  {
-    "type": "vocabulary",
-    "language": "Mixed",
-    "category": "phrases",
-    "front": "if needed",
-    "back": "si es necesario; en caso de ser necesario",
-    "example": "Call me if needed — I'll be available all evening.",
-    "tags": ["conditionals"],
-    "difficulty": "beginner",
-    "id": 42
-  },
-  {
-    "type": "vocabulary",
-    "language": "Mixed",
-    "category": "phrasal verbs",
-    "front": "throw oneself into",
-    "back": "lanzarse de lleno a; dedicarse completamente a algo",
-    "example": "After the breakup, she threw herself into her work.",
-    "tags": ["dedication"],
-    "difficulty": "intermediate",
-    "id": 43
-  },
-  {
-    "type": "vocabulary",
-    "language": "Mixed",
-    "category": "nouns",
-    "front": "roadblock",
-    "back": "obstáculo; impedimento",
-    "example": "The lack of funding was a major roadblock for the project.",
-    "tags": ["problems"],
-    "difficulty": "intermediate",
-    "id": 44
-  },
-  {
-    "type": "vocabulary",
-    "language": "Mixed",
     "category": "nouns",
     "front": "hindrance",
     "back": "obstáculo; estorbo (más formal que 'roadblock')",
